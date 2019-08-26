@@ -8,7 +8,7 @@ import { Route, Link, Switch } from "react-router-dom";
 // components
 import Home from "./components/Home/Home";
 import MyAccount from "./components/MyAccount/MyAccount";
-import Tutorials from "./components/Tutorials";
+import Tutorials from "./components/Tutorials/Tutorials";
 import MyTutorials from "./components/MyTutorials/MyTutorials";
 
 const GlobalStyle = createGlobalStyle`
