@@ -9,28 +9,19 @@ import MyAccount from "./components/MyAccount/MyAccount";
 import SignUp from './components/SignUp/SignUp';
 import Tutorials from "./components/Tutorials/Tutorials";
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: #feffe5;
-  }
-`;
-
-const Content = styled.div`
-  border: 15px solid #000e33;
-  border-radius: 30px;
-  padding: 50px;
-`;
+import GlobalStyle from './styled-components/GlobalStyle';
+import ContentContainer from './styled-components/ContentContainer';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
       <h1>How-To App</h1>
-      <Content>
+      <ContentContainer>
         <SignUp />
       {/* <Route exact path="/" component={Home} /> */}
       {/* <Route path="/myaccount" component={MyAccount} /> */}
-      </Content>
+      </ContentContainer>
     </div>
   );
 }
