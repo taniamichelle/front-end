@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import MyAccount from "./components/MyAccount/MyAccount";
 import SignUp from './components/SignUp/SignUp';
 import SignIn from './components/SignIn/SignIn';
+import Search from './components/Search/Search'
 import Tutorials from "./components/Tutorials/Tutorials";
 
 import GlobalStyle from './styled-components/GlobalStyle';
@@ -20,6 +21,7 @@ function App() {
       <ContentContainer>
         {/* <SignUp /> */}
         <SignIn />
+        {/* <Search /> */}
       {/* <Route exact path="/" component={Home} /> */}
       {/* <Route path="/myaccount" component={MyAccount} /> */}
       </ContentContainer>
