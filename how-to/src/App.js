@@ -7,7 +7,7 @@ import { Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home";
 import MyAccount from "./components/MyAccount/MyAccount";
 import SignUp from './components/SignUp/SignUp';
-import Tutorials from "./components/Tutorials";
+import Tutorials from "./components/Tutorials/Tutorials";
 
 const GlobalStyle = createGlobalStyle`
   body {
