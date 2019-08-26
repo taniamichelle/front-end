@@ -1,11 +1,21 @@
 import React from "react";
+import styled from "styled-components";
 
-const AccountInfo = props => {
+const InfoDiv = styled.div`
+  width: 40%;
+  margin: 0 auto;
+`;
+
+const AccountInfo = ({ person }) => {
   return (
     <div>
       <h4>Account Info</h4>
-      <p>Name:</p>
-      <p>Email:</p>
+      <InfoDiv>
+        <p>Name: {person.name}</p>
+        <hr />
+        <p>Email: {person.email}</p>
+        <hr />
+      </InfoDiv>
     </div>
   );
 };
