@@ -31,6 +31,7 @@ const ChangePassword = props => {
 
     setErrorMessage("");
     console.log("passwords match");
+    props.changePassword(newPassword.password);
   };
 
   return (
