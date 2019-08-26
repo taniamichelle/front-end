@@ -12,6 +12,7 @@ const FormWrapper = styled.div`
   h2 {
     align-self: center;
     margin: 0;
+    margin-bottom: 20px;
   }
 
   label {
