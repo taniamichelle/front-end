@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Tutorials from './components/Tutorials';
 
 // components
 import MyAccount from "./components/MyAccount/MyAccount";
