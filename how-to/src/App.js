@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Tutorials from './components/Tutorials';
 
 function App() {
   return (
