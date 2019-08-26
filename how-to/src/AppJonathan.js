@@ -19,8 +19,8 @@ function App() {
       <GlobalStyle />
       <h1>How-To App</h1>
       <ContentContainer>
-        {/* <SignUp /> */}
-        <SignIn />
+        <SignUp />
+        {/* <SignIn /> */}
         {/* <Search /> */}
       {/* <Route exact path="/" component={Home} /> */}
       {/* <Route path="/myaccount" component={MyAccount} /> */}
