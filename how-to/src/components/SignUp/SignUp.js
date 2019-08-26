@@ -1,16 +1,9 @@
 import React from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
-import styled from 'styled-components';
 import axios from 'axios';
 
-const FormWrapper = styled.div`
-  border: 2px solid gray;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+import FormWrapper from '../../styled-components/FormWrapper';
 
 const SignUp = ({ touched, errors, values, status }) => {
   return (
