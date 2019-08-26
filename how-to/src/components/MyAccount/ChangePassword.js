@@ -6,6 +6,8 @@ const ChangePassword = props => {
     confirmPassword: ""
   });
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = e => {
     setNewPassword({
       ...newPassword,
@@ -13,10 +15,29 @@ const ChangePassword = props => {
     });
   };
 
+  const submitNewPassword = e => {
+    e.preventDefault();
+    // password can't be blank
+    if (newPassword.password.trim() === "") {
+      setErrorMessage("Password cannot be blank.");
+      return;
+    }
+
+    //password fields must match
+    if (newPassword.password !== newPassword.confirmPassword) {
+      setErrorMessage("Passwords must match. Please try again.");
+      return;
+    }
+
+    setErrorMessage("");
+    console.log("passwords match");
+  };
+
   return (
     <div>
       <h4>Change Password</h4>
       <form>
+        <p>{errorMessage && errorMessage}</p>
         <div>
           <label>New Password</label>
           <div>
@@ -37,6 +58,9 @@ const ChangePassword = props => {
               onChange={handleChange}
               value={newPassword.confirmPassword}
             />
+          </div>
+          <div>
+            <button onClick={submitNewPassword}>Change Password</button>
           </div>
         </div>
       </form>
