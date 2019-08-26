@@ -27,7 +27,7 @@ const FormWrapper = styled.div`
   input {
     align-self: stretch;
     padding: 15px;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   p {

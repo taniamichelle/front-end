@@ -6,6 +6,7 @@ import { Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home";
 import MyAccount from "./components/MyAccount/MyAccount";
 import SignUp from './components/SignUp/SignUp';
+import SignUpSuccess from './components/SignUp/SignUpSuccess';
 import SignIn from './components/SignIn/SignIn';
 import Search from './components/Search/Search'
 import Tutorials from "./components/Tutorials/Tutorials";
@@ -19,11 +20,14 @@ function App() {
       <GlobalStyle />
       <h1>How-To App</h1>
       <ContentContainer>
-        <SignUp />
+        {/* <SignUp /> */}
+        <SignUpSuccess />
         {/* <SignIn /> */}
         {/* <Search /> */}
       {/* <Route exact path="/" component={Home} /> */}
       {/* <Route path="/myaccount" component={MyAccount} /> */}
+        <Route path='/signin' component={SignIn} />
+        <Route path='/signup' component={SignUp} />
       </ContentContainer>
     </div>
   );
