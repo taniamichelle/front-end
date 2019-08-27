@@ -28,11 +28,17 @@ const SearchStyles = styled.div`
         font-size: 18px;
       }
 
-      img {
+      a {
         width: 5%;
-        border: 2px solid #cbcbcb;
-        cursor: pointer;
+        display: flex;
+        
+        img {
+          width: 100%;
+          border: 2px solid #cbcbcb;
+          cursor: pointer;
+        }
       }
+      
     }
 
     .buttons {

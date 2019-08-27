@@ -38,7 +38,8 @@ export default function NewTutorials() {
   return (
     <div>
       <h3>What's New?</h3>
-      {tempData.map(tutorial => (
+      {
+        tempData.map(tutorial => (
         <Link key={tutorial.id} style={{textDecoration: 'none'}} to='/tutorial'>
           <TutorialDiv>
             <img alt='video'

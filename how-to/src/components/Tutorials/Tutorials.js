@@ -2,7 +2,7 @@ import React from 'react';
 
 const Tutorials = props => {
     return (
-        <Router>
+        // <Router>
             <div className='tutorial-container'>
                 <div className='tutorial-header'>
                     <h1>{props.tutorial.name}</h1>
@@ -13,7 +13,7 @@ const Tutorials = props => {
                     <p>{props.tutorial.description}</p>
                 </div>
             </div>
-        </Router>
+        // </Router>
     );
 };
 

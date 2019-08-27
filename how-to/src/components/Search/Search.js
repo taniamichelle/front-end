@@ -1,15 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { Form, Field, withFormik } from 'formik';
-import styled from 'styled-components';
+import { Route, Link } from 'react-router-dom';
 
-import Filters from './Filters';
+import FilterBar from './FilterBar';
 import NewTutorials from './NewTutorials';
 import SearchResults from './SearchResults';
+import Filters from './Filters';
 
 import SearchStyles from '../../styled-components/SearchStyles';
 
 const SearchForm = ({ values }) => {
+  const [filterStatus, setFilterStatus] = useState(false);
+
   const handleReset = () => {};
 
   return (
@@ -18,7 +20,11 @@ const SearchForm = ({ values }) => {
       <Form>
         <div className='searchbar'>
           <Field name='search' type='text' placeholder='Search' />
-          <img alt='search' src={require('../../images/search_white.png')} />
+          <Link to='/search/results'>
+            <img alt='search' 
+              src={require('../../images/search_white.png')} 
+            />
+          </Link>
         </div>
         <br />
         <div className='buttons'>
@@ -27,9 +33,10 @@ const SearchForm = ({ values }) => {
           <button className='requestBtn'>
             Request<br />Tutorial</button>
         </div>
-        <Filters />
-        <NewTutorials />
-        <SearchResults />
+        <FilterBar filterStatus={filterStatus} />
+        <Route exact path='/search' component={NewTutorials} />
+        <Route path='/search/results' component={SearchResults} />
+        <Route path='/search/filter' component={Filters} />
       </Form>
     </SearchStyles>
   )
