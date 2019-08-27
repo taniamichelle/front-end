@@ -13,7 +13,7 @@ export const initialState = {
     error: ''
 }
 
-export const tutorialReducer = (state = initialState, action) => {
+const tutorialReducer = (state = initialState, action) => {
     console.log(action);
     switch (action.type) {
         case FETCH_TUTORIALS_START:
@@ -47,3 +47,5 @@ export const tutorialReducer = (state = initialState, action) => {
             return state;
     }
 }
+
+export default tutorialReducer;
