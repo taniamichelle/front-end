@@ -37,6 +37,10 @@ const FormWrapper = styled.div`
     margin: 0px;
   }
 
+  a {
+    width: 100%;
+  }
+
   button {
     cursor: pointer;
     background-color: #0036cc;
