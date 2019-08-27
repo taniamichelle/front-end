@@ -5,9 +5,10 @@ import styled from 'styled-components';
 const StyledNav = styled.nav`
   display: flex;
   justify-content: flex-end;
+  margin: 20px 0;
 
   ul {
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
     padding: 0 50px;
@@ -17,6 +18,8 @@ const StyledNav = styled.nav`
       
       a {
         text-decoration: none;
+        font-size: 24px;
+        color: #292929;
       }
     }
   }

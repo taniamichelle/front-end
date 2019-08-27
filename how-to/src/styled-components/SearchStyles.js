@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const SearchStyles = styled.div`
   h2 {
     font-size: 36px;
+    text-align: center;
   }
   
   h3 {

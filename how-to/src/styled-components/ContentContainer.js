@@ -5,7 +5,8 @@ const ContentContainer = styled.div`
   border-radius: 30px;
   padding: 20px 50px 50px;
   width: 80%;
-  margin: 20px auto;
+  margin: 0 auto;
+  margin-bottom: 20px;
 `;
 
 export default ContentContainer;

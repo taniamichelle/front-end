@@ -4,9 +4,11 @@ import styled from 'styled-components';
 
 const TutorialDiv = styled.div`
   display: flex;
+  align-items: center;
 
   img {
     width: 150px;
+    height: 100px;
     margin-right: 25px;
   }
 
