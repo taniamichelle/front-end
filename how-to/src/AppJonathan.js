@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
 import { Route, Link } from "react-router-dom";
 
 // components
@@ -27,8 +27,9 @@ function App() {
         {/* <Search /> */}
       {/* <Route exact path="/" component={Home} /> */}
       {/* <Route path="/myaccount" component={MyAccount} /> */}
-        <Route path='/signin' component={SignIn} />
+        <Route path='/' component={SignIn} />
         <Route path='/signup' component={SignUp} />
+        <Route path='/search' component={Search} />
       </ContentContainer>
     </div>
   );

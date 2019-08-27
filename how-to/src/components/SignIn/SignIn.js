@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -48,7 +49,7 @@ const SignIn = ({ touched, errors, values, status }) => {
               <p>{errors.password}</p>
             )}
             <br />
-            <button type='submit'>Let's Go!</button>
+            <Link to='/search'><button type='submit'>Let's Go!</button></Link>
         </FormWrapper>
       </Form>
     </SignInDiv>

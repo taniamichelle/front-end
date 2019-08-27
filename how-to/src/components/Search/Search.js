@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Form, Field, withFormik } from 'formik';
 
 const tempData = [
@@ -22,7 +23,7 @@ const NewContent = () => {
       <h3>What's New?</h3>
       {tempData.map(tutorial => (
         <div>
-          <p>{tutorial.description}</p>
+          <Link to='/tutorial'><p>{tutorial.description}</p></Link>
         </div>
       ))}
     </div>

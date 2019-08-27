@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+import SignUpHeader from './SignUpHeader';
 import FormWrapper from '../../styled-components/FormWrapper';
 
 const SignUp = ({ touched, errors, values, status }) => {
   return (
     <div>
-      <h1>It's time to start teaching each other!</h1>
+      <SignUpHeader />
         <Form>
           <FormWrapper>
             <h2>Sign Up</h2>
@@ -42,7 +44,7 @@ const SignUp = ({ touched, errors, values, status }) => {
               <p>{errors.password}</p>
             )}
             <br />
-            <button type='submit'>Let's Go!</button>
+            <Link to='/signupsuccess'><button type='submit'>Let's Go!</button></Link>
           </FormWrapper>
         </Form>
     </div>
