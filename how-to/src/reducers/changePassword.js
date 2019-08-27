@@ -7,7 +7,7 @@ import {
 const initialState = {
   password: "",
   isChangingPassword: false,
-  errorMessage: ""
+  message: ""
 };
 
 const changePasswordReducer = (state = initialState, action) => {
