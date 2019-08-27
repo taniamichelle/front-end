@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 const Tutorials = props => {
     const [tutorial, setTutorial] = useState({});
@@ -9,7 +9,7 @@ const Tutorials = props => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        axios.post('https://jsonplaceholder.typicode.com/posts')
+        axiosWithAuth().post('https://jsonplaceholder.typicode.com/posts')
             .then(res => console.log(res))
             .catch(err => console.log(err.response));
     };
