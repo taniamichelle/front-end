@@ -24,16 +24,16 @@ const Content = styled.div`
 `;
 
 function App() {
-    return (
-        <div className="App">
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/myaccount" component={MyAccount} />
-                <GlobalStyle />
-                <Content>Content Div</Content>
-            </Switch>
-        </div>
-    );
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/myaccount" component={MyAccount} />
+        <GlobalStyle />
+        <Content>Content Div</Content>
+      </Switch>
+    </div>
+  );
 }
 
 export default App;
