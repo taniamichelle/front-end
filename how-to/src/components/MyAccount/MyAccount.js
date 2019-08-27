@@ -10,7 +10,7 @@ import ChangePassword from "./ChangePassword";
 import MyTutorials from "../MyTutorials/MyTutorials";
 
 // actions
-import { changePassword } from "../../actions";
+import { changePassword } from "../../actions/changePasswordAction";
 
 // styles
 import GlobalStyle from "../../styled-components/GlobalStyle";

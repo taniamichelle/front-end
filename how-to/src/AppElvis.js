@@ -17,11 +17,10 @@ import ContentContainer from "./styled-components/ContentContainer";
 function App() {
   return (
     <div className="App">
+      <Route exact path="/" component={Home} />
       <GlobalStyle />
-      <h1>How-To App</h1>
       <ContentContainer>
         {/* <SignUp /> */}
-        <Route exact path="/" component={Home} />
         <Route path="/myaccount" component={MyAccount} />
       </ContentContainer>
     </div>
