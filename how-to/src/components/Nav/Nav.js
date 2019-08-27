@@ -29,7 +29,8 @@ export default function Nav(props) {
         <li><Link to='/signup'>Sign Up</Link></li>
         <li><Link to='/signin'>Sign In</Link></li>
         <li><Link to='/search'>Search</Link></li>
-        <li><Link to='/profile'>Profile</Link></li>
+        <li><Link to='/myaccount'>Profile</Link></li>
+        <li><Link to='/upload'>Upload</Link></li>
         <li><Link to='/'>Sign Out</Link></li>
       </ul>
     </StyledNav>
