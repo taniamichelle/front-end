@@ -19,7 +19,6 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <h1>How-To App</h1>
       <Nav />
       <ContentContainer>
         {/* <SignUp /> */}
