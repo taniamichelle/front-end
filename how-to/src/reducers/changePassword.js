@@ -2,7 +2,7 @@ import {
   CHANGE_PASSWORD_START,
   CHANGE_PASSWORD_SUCCESS,
   CHANGE_PASSWORD_FAILURE
-} from "../actions";
+} from "../actions/changePasswordAction";
 
 const initialState = {
   password: "",
