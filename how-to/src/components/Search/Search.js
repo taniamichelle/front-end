@@ -1,9 +1,65 @@
 import React from 'react';
+import { Form, Field, withFormik } from 'formik';
 
-export default function Search() {
+const tempData = [
+  {
+    img: '', 
+    description: 'I love cheese, especially croque monsieur macaaroni cheese. Edam lancashire gouda manchego queso blue castello feta gouda'
+  },
+  {
+    img: '', 
+    description: 'I love cheese, especially croque monsieur macaaroni cheese. Edam lancashire gouda manchego queso blue castello feta gouda'
+  },
+  {
+    img: '', 
+    description: 'I love cheese, especially croque monsieur macaaroni cheese. Edam lancashire gouda manchego queso blue castello feta gouda'
+  },
+]
+
+const NewContent = () => {
   return (
     <div>
-      Search
+      <h3>What's New?</h3>
+      {tempData.map(tutorial => (
+        <div>
+          <p>{tutorial.description}</p>
+        </div>
+      ))}
     </div>
   )
 }
+
+const Filter = () => {
+  return (
+    <div>
+      Filters
+    </div>
+  )
+}
+
+const Search = ({ values }) => {
+  return (
+    <div>
+      <h2>Let's Learn!</h2>
+      <Form>
+        <Field name='search' type='text' placeholder='Search' />
+        <button><span>🔍</span></button>
+        <br />
+        <button>Request Tutorial</button>
+        <Filter />
+        <NewContent />
+      </Form>
+    </div>
+  )
+}
+
+const FormikSearch = withFormik({
+  mapPropsToValues({ search }) {
+    return {
+      search: search || '',
+    }
+  },
+
+})(Search);
+
+export default FormikSearch;

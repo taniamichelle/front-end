@@ -2,17 +2,31 @@ import React from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import styled from 'styled-components';
 
 import FormWrapper from '../../styled-components/FormWrapper';
 
+const SignInDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const WelcomeDiv = styled.div`
+  margin-right: 20px;  
+
+  p {
+    text-align: left;
+  }
+`;
+
 const SignIn = ({ touched, errors, values, status }) => {
   return (
-    <div>
-      <div>
+    <SignInDiv>
+      <WelcomeDiv>
         <h2>Welcome Back</h2>
         <p>We learned a lot while you were gone!</p>
         <p>We're excited to share it with you!</p>
-      </div>
+      </WelcomeDiv>
       <Form>
         <FormWrapper>
           <h2>Sign In</h2>
@@ -37,7 +51,7 @@ const SignIn = ({ touched, errors, values, status }) => {
             <button type='submit'>Let's Go!</button>
         </FormWrapper>
       </Form>
-    </div>
+    </SignInDiv>
   )
 }
 

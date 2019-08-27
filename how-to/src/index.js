@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./AppTigran";
+// import "./index.css";
+import App from "./AppJonathan";
 import { BrowserRouter as Router } from "react-router-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
@@ -17,7 +17,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <AppElvis />
+      <App />
     </Router>
   </Provider>,
   document.getElementById("root")
