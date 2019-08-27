@@ -17,12 +17,12 @@ const Tutorials = props => {
     return (
         <Router>
             <div className='tutorials-container'>
-                <header>
+                {/* <header>
                     <h3>How-To</h3>
                     <Link to='/search'>Search</Link>
                     <Link to='/profile'>Profile</Link>
                     <Link to='/sign out'>Sign Out</Link>
-                </header>
+                </header> */}
                 <div className='tutorials-content'>
                     <h1>How to Title</h1>
                     <button>Save!</button>

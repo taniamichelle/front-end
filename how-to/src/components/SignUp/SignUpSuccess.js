@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import FormWrapper from '../../styled-components/FormWrapper';
 
@@ -25,7 +26,7 @@ export default function SignUpSuccess() {
       <SuccessWrapper>
         <h3>SUCCESS!</h3>
         <h4>LET'S GET STARTED</h4>
-        <button>Continue!</button>
+        <Link to='/search'><button>Continue!</button></Link>
       </SuccessWrapper>
     </div>
   )

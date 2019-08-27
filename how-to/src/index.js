@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import "./index.css";
-import App from "./AppElvis";
+import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
