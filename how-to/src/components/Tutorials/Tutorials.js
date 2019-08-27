@@ -2,12 +2,18 @@ import React from 'react';
 
 const Tutorials = props => {
     return (
-        <div className='tutorial-content'>
-            <div className='tutorial-header'>{props.tutorial.name}</div>
-            <div className='tutorial-description'>
-                <p>{props.tutorial.description}</p>
+        <Router>
+            <div className='tutorial-container'>
+                <div className='tutorial-header'>
+                    <h1>{props.tutorial.name}</h1>
+                    <button>Save!</button>
+                    <button>Helpful!</button>
+                </div>
+                <div className='tutorial-description'>
+                    <p>{props.tutorial.description}</p>
+                </div>
             </div>
-        </div>
+        </Router>
     );
 };
 
