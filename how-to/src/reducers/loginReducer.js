@@ -11,7 +11,7 @@ const initialState = {
   username: "",
   email: "",
   isLoggingIn: false,
-  isLggedIn: false,
+  isLoggedIn: false,
   error: ""
 };
 
