@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Link } from "react-router-dom";
 
 // components
+import Nav from './components/Nav/Nav'
 import Home from "./components/Home/Home";
 import MyAccount from "./components/MyAccount/MyAccount";
 import SignUp from './components/SignUp/SignUp';
@@ -19,9 +20,10 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <h1>How-To App</h1>
+      <Nav />
       <ContentContainer>
         {/* <SignUp /> */}
-        <SignUpSuccess />
+        {/* <SignUpSuccess /> */}
         {/* <SignIn /> */}
         {/* <Search /> */}
       {/* <Route exact path="/" component={Home} /> */}
