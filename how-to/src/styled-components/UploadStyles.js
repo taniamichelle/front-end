@@ -20,6 +20,7 @@ const UploadStyles = styled.div`
         flex-flow: column nowrap;
 
     }
+    
     .name-field {
         input {
             margin-top: 0.4rem;
