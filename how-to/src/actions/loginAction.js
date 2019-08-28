@@ -19,8 +19,11 @@ export const login = (user, history) => dispatch => {
     .then(res => {
       console.log("THE RESPONSE:", res.data.token);
       localStorage.setItem("token", res.data.token);
-      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
-      history.push("/search");
+      return axios.get("https://reqres.in/api/users/2").then(res => {
+        console.log("USER LOGIN:", res.data.data);
+        dispatch({ type: LOGIN_SUCCESS, payload: res.data.data });
+        history.push("/myaccount");
+      });
     })
     .catch(err =>
       dispatch({
