@@ -5,6 +5,7 @@ export const ModalWrapper = styled.div`
   box-shadow: 0px 0px 4px;
   outline: none;
   width: 800px;
+  height: 430px;
   margin: 0 auto;
   position: fixed;
   top: 80px;
@@ -30,11 +31,38 @@ export const ModalWrapper = styled.div`
     textarea {
       max-width: 99%;
       margin: 5px 0 20px 0;
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      padding: 5px;
     }
 
     .modal-buttons {
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  .request-success {
+    width: 92%;
+    height: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 36px;
+    }
+
+    a {
+      width: 100%;
+
+      button {
+        font-size: 24px;
+        padding: 18px;
+        width: 50%;
+      }  
     }
   }
 `;

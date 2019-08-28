@@ -24,7 +24,8 @@ import { ModalWrapper, Button } from '../../styled-components/RequestStyles';
 //     .catch(err => console.log(err));
 // }
 
-const RequestModal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
+const RequestModal = ({ isShowing, hide }) => isShowing ? 
+ReactDOM.createPortal(
   <>
     <div className='modal-overlay' />
     <ModalWrapper aria-modal aria-hidden tabIndex={-1} role='dialog'>
