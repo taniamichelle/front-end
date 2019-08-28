@@ -14,7 +14,6 @@ import Search from './components/Search/Search';
 import MyAccount from './components/MyAccount/MyAccount';
 import UploadForm from './components/Tutorials/UploadForm';
 import Tutorials from './components/Tutorials/Tutorials';
-import UploadForm from './components/Tutorials/UploadForm';
 
 export default function App() {
   return (
