@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const FormWrapper = styled.div`
-  max-width: 500px;
+  width: 400px;
   margin: 0 auto;
   border: 2px solid gray;
   border-radius: 3px;
@@ -9,7 +9,7 @@ const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 40px 25px;
+  padding: 40px 5%;
 
   h2 {
     align-self: center;
