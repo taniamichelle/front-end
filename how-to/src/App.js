@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import { Route, Link } from "react-router-dom";
-=======
-import React, { useState } from 'react';
-import { Route, Link } from 'react-router-dom';
->>>>>>> 681d1b7830381609bb78df1e29dba98c467117ab
 
 // Styles
 import GlobalStyle from "./styled-components/GlobalStyle";
@@ -25,7 +20,9 @@ export default function App() {
     <div>
       <GlobalStyle />
       <Nav />
-      <Link to='/signin'><img className='logo' src={require('./images/logo.png')} /></Link>
+      <Link to="/signin">
+        <img className="logo" src={require("./images/logo.png")} />
+      </Link>
       <ContentContainer>
         <Route exact path="/" component={SignIn} />
         <Route path="/signin" component={SignIn} />

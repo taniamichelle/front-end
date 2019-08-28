@@ -50,7 +50,6 @@ const SignIn = props => {
       <form onSubmit={handleSubmit}>
         <FormWrapper>
           <h2>Sign In</h2>
-<<<<<<< HEAD
           <label>Email</label>
           <input
             name="email"
@@ -72,34 +71,6 @@ const SignIn = props => {
           {/* <Link to="/search"> */}
           <button type="submit">Let's Go!</button>
           {/* </Link> */}
-=======
-          
-          <label>Email Address</label>
-          <Field name='email' type='text' placeholder='Type email address' />
-          {touched.email && errors.email && (
-            <p>{errors.email}</p>
-          )}
-          
-          <br />
-          
-          <label>Username</label>
-          <Field name='username' type='text' placeholder='Type username' />
-          {touched.username && errors.username && (
-            <p>{errors.username}</p>
-          )}
-          
-          <br />
-          
-          <label>Password</label>
-          <Field name='password' type='password' placeholder='Type password' />
-          {touched.password && errors.password && (
-            <p>{errors.password}</p>
-          )}
-          
-          <br />
-          
-          <Link to='/search'><button type='submit'>Let's Go!</button></Link>
->>>>>>> 681d1b7830381609bb78df1e29dba98c467117ab
         </FormWrapper>
       </form>
     </SignInDiv>
