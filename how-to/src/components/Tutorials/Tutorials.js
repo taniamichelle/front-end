@@ -43,8 +43,8 @@ const Tutorials = (props) => {
             <div className='tutorial-header'>
                 <h1>Tutorials</h1>
                 <h2>{tutorials.name}</h2>
-                <button>Save!</button>
-                <button>Helpful!</button>
+                {/* <button>Save!</button>
+                <button>Helpful!</button> */}
             </div>
             <Route exact path='/tutorials' render={props => <UploadForm {...props} addTutorial={addTutorial} />} />
             {tutorials.map(tutorial => {
@@ -52,16 +52,6 @@ const Tutorials = (props) => {
                     tutorials={tutorials}
                     deleteTutorial={deleteTutorial} />;
             })}
-            {/* <Route path={`/tutorials/`} render={props => {
-                //console.log(props);
-                const currentTutorial = tutorials.find(tutorial => tutorials.id == props.match.params.id);
-                //console.log(currentTutorial);
-                // if currentTutorial is not defined, we can render a redirect instead
-                // if (!currentTutorial) {
-                //     return props.history.push('/tutorials')
-                // }
-                return <UploadForm {...props} addTutorial={addTutorial} initialValues={currentTutorial} />;
-            }} /> */}
         </div>
     );
 };

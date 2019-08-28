@@ -3,7 +3,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
 import TutorialCard from './TutorialCard';
-import { getTutorialsData } from '../actions/TutorialData';
+import { getTutorialData } from '../actions/TutorialData';
 
 const TutorialsList = props => {
     return (
