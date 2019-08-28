@@ -43,8 +43,8 @@ const UploadForm = ({ addTutorial, tutorial }) => {
                     <h1>Upload Tutorial</h1>
                     <div className='upload-form'>
                         <form onSubmit={handleSubmit}>
-                            <legend>Tutorial Name</legend>
                             <div className='name-field'>
+                                <legend>Tutorial Name</legend>
                                 <input
                                     type='text'
                                     name='name'
@@ -54,9 +54,9 @@ const UploadForm = ({ addTutorial, tutorial }) => {
                             </div>
                             <div className='description-field'>
                                 <legend>Tutorial Description</legend>
-                                <input
+                                <textarea
                                     name='description'
-                                    type='text'
+                                    rows='15'
                                     value={upload.description}
                                     onChange={handleChange}
                                 />
