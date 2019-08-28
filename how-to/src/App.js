@@ -16,11 +16,11 @@ import Uploads from './components/Tutorials/Uploads';
 import Tutorials from './components/Tutorials/Tutorials';
 
 export default function App() {
-
   return (
     <div>
       <GlobalStyle />
       <Nav />
+      <Link to='/signin'><img className='logo' src={require('./images/logo.png')} /></Link>
       <ContentContainer>
         <Route exact path='/' component={SignIn} />
         <Route path='/signin' component={SignIn} />

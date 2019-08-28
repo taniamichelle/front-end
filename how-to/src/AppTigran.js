@@ -10,6 +10,7 @@ import Search from './components/Search/Search'
 import Tutorials from "./components/Tutorials/Tutorials";
 import GlobalStyle from './styled-components/GlobalStyle';
 import ContentContainer from './styled-components/ContentContainer';
+import Request from './components/Request/Request';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
       <h1>How-To App</h1>
       <ContentContainer>
         Hello world!
+        <Request />
       </ContentContainer>
     </div>
   );
