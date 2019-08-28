@@ -20,7 +20,7 @@ export default function App() {
     <div>
       <GlobalStyle />
       <Nav />
-      <Link to='/signin'><img className='logo' src={require('./images/logo.png')} /></Link>
+      <Link><img className='logo' src={require('./images/logo.png')} /></Link>
       <ContentContainer>
         <Route exact path='/' component={SignIn} />
         <Route path='/signin' component={SignIn} />
