@@ -3,6 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     background-color: #feffe5;
     width: 100%;
     font-family: 'Helvetica', sans-serif;
@@ -13,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
     top: 20px;
     left: 50px;
+    z-index: 9999;
   }
 `;
 
