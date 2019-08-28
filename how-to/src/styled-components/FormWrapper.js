@@ -9,11 +9,12 @@ const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 40px 50px;
+  padding: 40px 25px;
 
   h2 {
     align-self: center;
     margin: 0;
+    font-size: 30px;
     margin-bottom: 20px;
   }
 
@@ -28,6 +29,8 @@ const FormWrapper = styled.div`
     align-self: stretch;
     padding: 15px;
     font-size: 18px;
+    border: 2px solid #cbcbcb;
+    border-radius: 3px
   }
 
   p {

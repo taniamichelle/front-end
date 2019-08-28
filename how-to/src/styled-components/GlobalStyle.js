@@ -17,6 +17,28 @@ const GlobalStyle = createGlobalStyle`
     left: 50px;
     z-index: 9999;
   }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 18px;
+  }
 `;
 
 export default GlobalStyle;

@@ -43,20 +43,20 @@ const SignIn = props => {
   return (
     <SignInDiv>
       <WelcomeDiv>
-        <h2>Welcome Back</h2>
-        <p>We learned a lot while you were gone!</p>
-        <p>We're excited to share it with you!</p>
+        <h1>Welcome Back</h1>
+        <h3>We learned a lot while you were gone!</h3>
+        <h3>We're excited to share it with you!</h3>
       </WelcomeDiv>
       <form onSubmit={handleSubmit}>
         <FormWrapper>
           <h2>Sign In</h2>
-          <label>Email</label>
+          <label>Email Address</label>
           <input
             name="email"
             type="text"
             value={user.email}
             onChange={handleChange}
-            placeholder="email..."
+            placeholder="Type email address"
           />
           <br />
           <label>Password</label>
@@ -65,7 +65,7 @@ const SignIn = props => {
             type="password"
             value={user.password}
             onChange={handleChange}
-            placeholder="password..."
+            placeholder="Type password"
           />
           <br />
           {/* <Link to="/search"> */}
