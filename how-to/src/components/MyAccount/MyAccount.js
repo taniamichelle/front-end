@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Link } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
+
+import axios from "axios";
 
 import { connect } from "react-redux";
 
@@ -18,15 +20,17 @@ import ContentContainer from "../../styled-components/ContentContainer";
 
 const MyAccount = ({
   match,
+  last_name,
+  first_name,
   isChangingPassword,
   errorMessage,
   password,
   changePassword
 }) => {
-  const [person, setPerson] = useState({
-    name: "Elvis Knapman",
-    email: "elvisknapman@gmail.com"
-  });
+  const person = {
+    first_name,
+    last_name
+  };
   return (
     <div>
       <p>{password && password}</p>
@@ -51,6 +55,8 @@ const MyAccount = ({
 
 const mapStateToProps = state => {
   return {
+    first_name: state.loginReducer.first_name,
+    last_name: state.loginReducer.last_name,
     isChangingPassword: state.changePasswordReducer.isChangingPassword,
     errorMessage: state.changePasswordReducer.errorMessage,
     password: state.changePasswordReducer.password
