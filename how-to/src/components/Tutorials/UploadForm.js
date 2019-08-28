@@ -21,64 +21,78 @@ const UploadForm = ({ addTutorial, tutorial }) => {
 
     return (
         <div className='upload-container'>
-            <header>
-                <h3>How-To</h3>
-            </header>
+            <div className='file-select-container'>
+                <h3>Select File</h3>
+                <div className='select-categories'>
+                    <h1>Select Categories</h1>
+                    <ul>
+                        <li>Appliances</li>
+                        <li>Arts and Crafts</li>
+                        <li>Automotive</li>
+                        <li>Education</li>
+                        <li>Electronics</li>
+                        <li>Fishing</li>
+                        <li>Home</li>
+                        <li>Hunting</li>
+                        <li>Yard</li>
+                    </ul>
+                </div>
+            </div>
             <div className='upload-content'>
                 <h1>Upload Tutorial</h1>
                 <div className='upload-form'>
                     <form onSubmit={handleSubmit}>
-                        <fieldset>
-                            <legend>Upload a Tutorial</legend>
-                            <div className='name-field'>
-                                <label>
-                                    Tutorial Name
+                        {/* <fieldset> */}
+                        {/* <legend>Upload Tutorial</legend> */}
+                        <div className='name-field'>
+                            <label>
+                                Tutorial Name
                                     <input
-                                        type='text'
-                                        name='name'
-                                        placeholder='Tutorial Name'
-                                        value={upload.name}
-                                        onChange={handleChange}
-                                    />
-                                </label>
-                            </div>
-                            <div className='description-field'>
-                                <label>
-                                    Tutorial Description
+                                    type='text'
+                                    name='name'
+                                    placeholder='Tutorial Name'
+                                    value={upload.name}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                        </div>
+                        <div className='description-field'>
+                            <label>
+                                Tutorial Description
                                 <input
-                                        name='description'
-                                        type='text'
-                                        placeholder='Enter description'
-                                        value={upload.description}
-                                        onChange={handleChange}
-                                    />
-                                </label>
-                            </div>
-                            <div className='keywords-field'>
-                                <label>
-                                    Key Words (separate with comma)
+                                    name='description'
+                                    type='text'
+                                    placeholder='Enter description'
+                                    value={upload.description}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                        </div>
+                        <div className='keywords-field'>
+                            <label>
+                                Key Words (separate with comma)
                                 <input
-                                        name='keywords'
-                                        type='text'
-                                        placeholder='Enter keywords'
-                                        value={upload.keywords}
-                                        onChange={handleChange}
-                                    />
-                                </label>
-                            </div>
-                            <div className='url-field'>
-                                <label>
-                                    URL
+                                    name='keywords'
+                                    type='text'
+                                    placeholder='Enter keywords'
+                                    value={upload.keywords}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                        </div>
+                        <div className='url-field'>
+                            <label>
+                                URL
                                 <input
-                                        name='url'
-                                        type='text'
-                                        placeholder='Enter url'
-                                        value={upload.url}
-                                        onChange={handleChange}
-                                    />
-                                </label>
-                            </div>
-                        </fieldset>
+                                    name='url'
+                                    type='text'
+                                    placeholder='Enter url'
+                                    value={upload.url}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                        </div>
+                        {/* </fieldset> */}
                         <button type='submit'>Confirm</button>
                     </form>
                 </div>
