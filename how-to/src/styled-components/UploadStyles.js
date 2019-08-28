@@ -20,14 +20,60 @@ const UploadStyles = styled.div`
         flex-flow: column nowrap;
 
     }
+    .name-field {
+        input {
+            margin-top: 0.4rem;
+            margin-bottom: 2rem;
+            margin-right: 4rem;
+            border: 2px solid gray;
+            border-radius: 3px;
+            padding: 5px 10px;
+            font-size: 18px;
+            width: 410px;
+            height: 3rem;
+        }
+    }
 
-    input {
-        margin-right: 4rem;
-        border: 2px solid gray;
-        border-radius: 3px;
-        padding: 5px 10px;
-        font-size: 18px;
-        width: 410px;
+    .description-field {
+        input {
+            margin-top: 0.4rem;
+            margin-bottom: 2rem;
+            margin-right: 4rem;
+            border: 2px solid gray;
+            border-radius: 3px;
+            padding: 5px 10px;
+            font-size: 18px;
+            width: 410px;
+            height: 11rem;
+        }
+    }
+    
+    .keywords-field {
+        input {
+            margin-top: 0.4rem;
+            margin-bottom: 2rem;
+            margin-right: 4rem;
+            border: 2px solid gray;
+            border-radius: 3px;
+            padding: 5px 10px;
+            font-size: 18px;
+            width: 410px;
+            height: 3rem;
+        }
+    }
+
+    .url-field {
+        input {
+            margin-top: 0.4rem;
+            margin-bottom: 2rem;
+            margin-right: 4rem;
+            border: 2px solid gray;
+            border-radius: 3px;
+            padding: 5px 10px;
+            font-size: 18px;
+            width: 410px;
+            height: 3rem;
+        }
     }
 
     button {
@@ -39,8 +85,8 @@ const UploadStyles = styled.div`
         border: none;
         padding: 10px 20px;
         border-radius: 3px;
+        margin-left: 20rem;
     }
-
 
     ul {
         padding: 0;
