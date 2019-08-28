@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { uploadTutorial } from '../actions/TutorialData';
+// import { connect } from 'react-redux';
+// import { uploadTutorial } from '../actions/TutorialData';
 
-const UploadForm = ({ uploadTutorial }) => {
+const UploadForm = ({ addTutorial, tutorial }) => {
     const [upload, setUpload] = useState({
         tutorial: {
             name: '',
@@ -15,7 +15,7 @@ const UploadForm = ({ uploadTutorial }) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        uploadTutorial(tutorial);
+        addTutorial(tutorial);
         setUpload('');
     };
 
@@ -60,7 +60,7 @@ const UploadForm = ({ uploadTutorial }) => {
                                 <input
                                         name='keywords'
                                         type='text'
-                                        placeholder='Enter key words'
+                                        placeholder='Enter keywords'
                                         value={upload.keywords}
                                         onChange={handleChange}
                                     />
@@ -87,10 +87,12 @@ const UploadForm = ({ uploadTutorial }) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        tutorialData: state.tutorialReducer.tutorialData
-    };
-};
+export default UploadForm;
 
-export default connect(mapStateToProps, uploadTutorial)(UploadForm);
+// const mapStateToProps = (state) => {
+//     return {
+//         tutorialData: state.tutorialReducer.tutorialData
+//     };
+// };
+
+// export default connect(mapStateToProps, uploadTutorial)(UploadForm);
