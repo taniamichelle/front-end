@@ -12,7 +12,7 @@ import SearchStyles from '../../styled-components/SearchStyles';
 const SearchForm = ({ values }) => {
   const [filterStatus, setFilterStatus] = useState(false);
 
-  const handleReset = () => {};
+  const handleReset = () => values.search='';
 
   return (
     <SearchStyles>

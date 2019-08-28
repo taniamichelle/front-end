@@ -147,7 +147,8 @@ export default function Filters({ match }) {
       <div className='categories'>
         <ul>
           {categories.map(category => (
-            <li key={category.category}>{category.category}
+            <li key={category.category}>
+              {category.category}
               <Link to={`${match.url}/${category.category}`}>
                 <img 
                   alt='filter arrow' 

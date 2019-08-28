@@ -66,18 +66,6 @@ function Nav({ location }) {
         {myAccountLink}
         {uploadLink}
         {signOutLink}
-        {/* {(location.pathname !== '/signin' 
-          && location.pathname !== 'signup') 
-          && <li><NavLink to='/search'>Search</NavLink></li>}
-        {(location.pathname !== '/signin' 
-          && location.pathname !== 'signup') 
-          && <li><NavLink to='/myaccount'>Profile</NavLink></li>}
-        {(location.pathname !== '/signin' 
-          && location.pathname !== 'signup') 
-          && <li><NavLink to='/upload'>Upload</NavLink></li>}
-        {(location.pathname !== '/signin' 
-          && location.pathname !== 'signup') 
-          && <li><NavLink to='/signin'>Sign Out</NavLink></li>} */}
       </ul>
     </StyledNav>
   )
