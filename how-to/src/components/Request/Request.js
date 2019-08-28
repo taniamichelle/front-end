@@ -86,7 +86,7 @@ class Request extends React.Component {
             <FormGroup>
               <Label for="exampleText"></Label>
             
-              <Input type="textarea" onChange={this.handleChanges} value={this.state.name} rows="12" cols="100" name="name" id="exampleText" />
+              <Input type="textarea" onChange={this.handleChanges} value={this.state.name} rows="12" name="name" id="exampleText" />
           </FormGroup>
             
             </ModalBody>

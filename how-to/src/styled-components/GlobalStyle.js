@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
     top: 20px;
     left: 50px;
+    z-index: 9999;
   }
 `;
 

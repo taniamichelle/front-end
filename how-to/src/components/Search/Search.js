@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import { Route, Link } from 'react-router-dom';
 
-import Request from '../Request/RequestHooks';
+// import Request from '../Request/RequestHooks';
+import RequestModal from '../Request/RequestModal';
+import useModal from './useModal';
 import FilterBar from './FilterBar';
 import NewTutorials from './NewTutorials';
 import SearchResults from './SearchResults';
@@ -14,6 +16,8 @@ const SearchForm = ({ values }) => {
   const [filterStatus, setFilterStatus] = useState(false);
 
   const handleReset = () => values.search='';
+
+  const { isShowing, toggle } = useModal();
 
   return (
     <SearchStyles>
@@ -33,7 +37,9 @@ const SearchForm = ({ values }) => {
           <span></span>
           {/* <button className='requestBtn'>
             Request<br />Tutorial</button> */}
-          <Request />
+          {/* <Request /> */}
+          <button className='button-default requestBtn' onClick={toggle}>Request<br />Tutorial</button>
+          <RequestModal isShowing={isShowing} hide={toggle} />
         </div>
         <FilterBar filterStatus={filterStatus} />
         <Route exact path='/search' component={NewTutorials} />
