@@ -5,7 +5,7 @@ import TutorialCard from './TutorialCard';
 import { getTutorialData } from '../actions/TutorialData';
 
 const Tutorials = (props) => {
-    const [tutorialsList, setutorialsList] = useState([]);
+    const [tutorialsList, setTutorialsList] = useState([]);
 
     // this fxn performs get request and updates our state
     const getTutorials = () => {
