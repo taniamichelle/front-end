@@ -75,6 +75,22 @@ const tutorialReducer = (state = initialState, action) => {
                 ...state,
                 error: ''
             }
+        case DELETE_TUTORIAL_START:
+            return {
+                ...state,
+                deletingData: true,
+            }
+        case DELETE_TUTORIAL_SUCCESS:
+            return {
+                ...state,
+                deletingData: false,
+                tutorialsData: action.payload
+            }
+        case DELETE_TUTORIAL_FAILURE:
+            return {
+                ...state,
+                error: ''
+            }
         default:
             return state;
     }
