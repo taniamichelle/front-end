@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
-import Tutorials from './Tutorials';
+import TutorialCard from './TutorialCard';
 import { getTutorialsData } from '../actions/TutorialData';
 
 const TutorialsList = props => {
@@ -20,7 +20,10 @@ const TutorialsList = props => {
                         'See Tutorials'
                     )}
             </button>
-            {props.tutorialData && props.tutorialData.map(data => <Tutorials key={data.name} tutorial={data} />)}
+            {props.tutorialData && props.tutorialData.map(data => <TutorialCard key={data.name} tutorial={data} />)}
+            <div className='upload-tutorial'>
+
+            </div>
         </div>
     );
 };
