@@ -4,13 +4,22 @@ import {
     FETCH_TUTORIALS_FAILURE,
     UPLOAD_TUTORIAL_START,
     UPLOAD_TUTORIAL_SUCCESS,
-    UPLOAD_TUTORIAL_FAILURE
-} from '../actions';
+    UPLOAD_TUTORIAL_FAILURE,
+    EDIT_TUTORIAL_START,
+    EDIT_TUTORIAL_SUCCESS,
+    EDIT_TUTORIAL_FAILURE,
+    DELETE_TUTORIAL_START,
+    DELETE_TUTORIAL_SUCCESS,
+    DELETE_TUTORIAL_FAILURE,
+} from '../actions/TutorialData';
 
 export const initialState = {
     tutorialsData: [],
     isLoading: false,
-    error: ''
+    error: '',
+    uploadingData: false,
+    editingData: false,
+    deletingData: false
 }
 
 const tutorialReducer = (state = initialState, action) => {
@@ -26,19 +35,42 @@ const tutorialReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                smurfsData: action.payload,
+                tutorialsData: action.payload,
+                error: ''
+            }
+        case FETCH_TUTORIALS_FAILURE:
+            return {
+                ...state,
                 error: ''
             }
         case UPLOAD_TUTORIAL_START:
             return {
-                ...state
+                ...state,
+                uploadingData: true
             }
         case UPLOAD_TUTORIAL_SUCCESS:
             return {
                 ...state,
+                uploadingData: false,
                 tutorialsData: action.payload
             }
         case UPLOAD_TUTORIAL_FAILURE:
+            return {
+                ...state,
+                error: ''
+            }
+        case EDIT_TUTORIAL_START:
+            return {
+                ...state,
+                editingData: true
+            }
+        case EDIT_TUTORIAL_SUCCESS:
+            return {
+                ...state,
+                editingData: false,
+                tutorialsData: action.payload
+            }
+        case EDIT_TUTORIAL_FAILURE:
             return {
                 ...state,
                 error: ''
