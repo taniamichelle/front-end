@@ -35,7 +35,7 @@ const SearchForm = ({ values }) => {
         </div>
         <FilterBar filterStatus={filterStatus} />
         <Route exact path='/search' component={NewTutorials} />
-        <Route path='/search/results' component={SearchResults} />
+        <Route path='/search/results' render={props => <SearchResults {...props} search={values.search} />} />
         <Route path='/search/filter' component={Filters} />
       </Form>
     </SearchStyles>

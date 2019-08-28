@@ -130,7 +130,6 @@ const Subcategory = props => {
 }
 
 export default function Filters({ match }) {
-  console.log(match);
   return (
     <FilterStyles>
       <div className='searchfields'>
