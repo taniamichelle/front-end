@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { deleteTutorial } from '../../actions';
 
 // pass deleteTutorial fxn from Tutorials file as a prop to keep TutorialCard dumb
-const TutorialCard = ({ tutorial, deleteTutorial }) => {
+const TutorialCard = (props) => {
     return (
         <div className='tutorial-description'>
-            {/* <p>{props.tutorial.description}</p> */}
-            <button onClick={() => deleteTutorial(tutorial.id)}>Delete</button>
-            <Link to={`/tutorials/edit/${tutorial.id}`}>Edit</Link>
+            <p>{props.description}</p>
+            <button onClick={() => deleteTutorial(props.id)}>Delete</button>
+            <Link to={`/tutorials/edit/${props.id}`}>Edit</Link>
         </div>
     );
 };
