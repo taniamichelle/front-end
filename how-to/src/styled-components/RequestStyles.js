@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const PageMask = styled.div`
+  background: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+`;
+
 export const ModalWrapper = styled.div`
   background-color: white;
   box-shadow: 0px 0px 4px;
