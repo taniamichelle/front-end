@@ -18,24 +18,25 @@ const Button = styled.button`
 `;
 
 const SubmitButton = styled.button`
-    display: inline-block;
-    color: white;
-    background-color: #0036cc;
-    font-size: 1em;
-    margin-left: 38em;
-    margin-top: -2.9em;
-    padding: 0.25em 1em;
-    border: 2px solid blue;
-    border-radius: 3px;
-    display: block;
-    width: 92px;
-    cursor: pointer;
+  display: inline-block;
+  color: white;
+  background-color: #0036cc;
+  font-size: 1em;
+  margin-left: 38em;
+  margin-top: -2.9em;
+  padding: 0.25em 1em;
+  border: 2px solid blue;
+  border-radius: 3px;
+  display: block;
+  width: 92px;
+  cursor: pointer;
 `;
 
 const ModalStyles = styled.div`
   background-color: white;
   width: 80%;
   margin: 0 auto;
+  padding: 10px 30px;
 `;
 
 class Request extends React.Component {

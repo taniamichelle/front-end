@@ -11,7 +11,7 @@ const UploadForm = ({ addTutorial, tutorial }) => {
         }
     });
 
-//     const handleChange = event => setUpload({ ...upload, [event.target.name]: event.target.value });
+    const handleChange = event => setUpload({ ...upload, [event.target.name]: event.target.value });
 
     const handleSubmit = event => {
         event.preventDefault();
