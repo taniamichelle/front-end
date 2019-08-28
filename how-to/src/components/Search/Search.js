@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import { Route, Link } from 'react-router-dom';
 
+import Request from '../Request/Request';
 import FilterBar from './FilterBar';
 import NewTutorials from './NewTutorials';
 import SearchResults from './SearchResults';
@@ -30,8 +31,9 @@ const SearchForm = ({ values }) => {
         <div className='buttons'>
           {values.search !== '' && <button className='resetBtn' onClick={handleReset}>Reset</button>}
           <span></span>
-          <button className='requestBtn'>
-            Request<br />Tutorial</button>
+          {/* <button className='requestBtn'>
+            Request<br />Tutorial</button> */}
+          <Request />
         </div>
         <FilterBar filterStatus={filterStatus} />
         <Route exact path='/search' component={NewTutorials} />

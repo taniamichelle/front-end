@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Button = styled.button`
   display: inline-block;
   color: white;
-  background-color: blue;
+  background-color: #0036cc;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -14,12 +14,13 @@ const Button = styled.button`
   border-radius: 3px;
   display: block;
   width: 92px;
+  cursor: pointer;
 `;
 
 const SubmitButton = styled.button`
     display: inline-block;
     color: white;
-    background-color: blue;
+    background-color: #0036cc;
     font-size: 1em;
     margin-left: 38em;
     margin-top: -2.9em;
@@ -28,8 +29,14 @@ const SubmitButton = styled.button`
     border-radius: 3px;
     display: block;
     width: 92px;
+    cursor: pointer;
 `;
 
+const ModalStyles = styled.div`
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+`;
 
 class Request extends React.Component {
   constructor(props) {
@@ -70,21 +77,23 @@ class Request extends React.Component {
     return (
       <div>
         <Button onClick={this.toggle}>{this.props.buttonLabel} Request Tutorial </Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <h1>Tutorial Request Form</h1>
-          <ModalBody>
-              <h2>What do you need a tutorial of? Please be detailed.</h2>
-        <FormGroup>
-          <Label for="exampleText"></Label>
-          
-          <Input type="textarea" onChange={this.handleChanges} value={this.state.name} rows="12" cols="100" name="name" id="exampleText" />
-        </FormGroup>
-           
-          </ModalBody>
-          <ModalFooter>
-            <Button onClick={this.toggle}>Cancel</Button>{' '}
-            <SubmitButton onClick={this.handleSubmit}>Submit</SubmitButton>
-          </ModalFooter>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} dialogClassName='modal-80w'>
+          <ModalStyles>
+            <h1>Tutorial Request Form</h1>
+            <ModalBody>
+                <h2>What do you need a tutorial of? Please be detailed.</h2>
+            <FormGroup>
+              <Label for="exampleText"></Label>
+            
+              <Input type="textarea" onChange={this.handleChanges} value={this.state.name} rows="12" cols="100" name="name" id="exampleText" />
+          </FormGroup>
+            
+            </ModalBody>
+            <ModalFooter>
+              <Button onClick={this.toggle}>Cancel</Button>{' '}
+              <SubmitButton onClick={this.handleSubmit}>Submit</SubmitButton>
+            </ModalFooter>
+          </ModalStyles>
         </Modal>
       </div>
     );

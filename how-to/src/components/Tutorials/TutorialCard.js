@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const TutorialCard = ({ tutorial, deleteTutorial }) => {
     return (
         <div className='tutorial-description'>
-            <p>{props.tutorial.description}</p>
+            {/* <p>{props.tutorial.description}</p> */}
             <button onClick={() => deleteTutorial(tutorial.id)}>Delete</button>
             <Link to={`/tutorials/edit/${tutorial.id}`}>Edit</Link>
         </div>
