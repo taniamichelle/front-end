@@ -31,25 +31,32 @@ const SignIn = ({ touched, errors, values, status }) => {
       <Form>
         <FormWrapper>
           <h2>Sign In</h2>
+          
           <label>Email Address</label>
-            <Field name='email' type='text' placeholder='Type email address' />
-            {touched.email && errors.email && (
-              <p>{errors.email}</p>
-            )}
-            <br />
-            <label>Username</label>
-            <Field name='username' type='text' placeholder='Type username' />
-            {touched.username && errors.username && (
-              <p>{errors.username}</p>
-            )}
-            <br />
-            <label>Password</label>
-            <Field name='password' type='password' placeholder='Type password' />
-            {touched.password && errors.password && (
-              <p>{errors.password}</p>
-            )}
-            <br />
-            <Link to='/search'><button type='submit'>Let's Go!</button></Link>
+          <Field name='email' type='text' placeholder='Type email address' />
+          {touched.email && errors.email && (
+            <p>{errors.email}</p>
+          )}
+          
+          <br />
+          
+          <label>Username</label>
+          <Field name='username' type='text' placeholder='Type username' />
+          {touched.username && errors.username && (
+            <p>{errors.username}</p>
+          )}
+          
+          <br />
+          
+          <label>Password</label>
+          <Field name='password' type='password' placeholder='Type password' />
+          {touched.password && errors.password && (
+            <p>{errors.password}</p>
+          )}
+          
+          <br />
+          
+          <Link to='/search'><button type='submit'>Let's Go!</button></Link>
         </FormWrapper>
       </Form>
     </SignInDiv>
