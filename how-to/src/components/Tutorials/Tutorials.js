@@ -14,32 +14,27 @@ const Tutorials = (props) => {
     const [tutorials, setTutorials] = useState([]);
 
     // this fxn performs get request and updates our state
-    const getTutorials = e => {
-        e.preventDefault();
-        getTutorialData(tutorials);
-        props.history.push('/tutorials');
+    const getTutorials = () => {
+        props.getTutorialData(tutorials);
     };
 
     // call getTutorials in useEffect
     useEffect(() => {
         getTutorials();
-    }, []);
+    }, [getTutorials]);
 
-    const addTutorial = e => {
-        e.preventDefault();
-        uploadTutorial(tutorials);
+    const addTutorial = (tutorial) => {
+        props.uploadTutorial(tutorial);
         props.history.push('/tutorials');
     };
 
-    const editFunction = e => {
-        e.preventDefault();
-        editTutorial(tutorials);
+    const editFunction = (tutorial) => {
+        props.editTutorial(tutorial);
         props.history.push('/tutorials');
     };
 
-    const deleteFunction = e => {
-        e.preventDefault();
-        deleteTutorial(tutorials);
+    const deleteFunction = (tutorial) => {
+        props.deleteTutorial(tutorial);
         props.history.push('/tutorials');
     };
 
@@ -51,22 +46,22 @@ const Tutorials = (props) => {
                 <button>Save!</button>
                 <button>Helpful!</button>
             </div>
-            <Route exact path='/tutorials' render={props => <UploadForm {...props} submitTutorial={addTutorial} />} />
+            <Route exact path='/tutorials' render={props => <UploadForm {...props} addTutorial={addTutorial} />} />
             {tutorials.map(tutorial => {
                 return <TutorialCard key={tutorials.id}
                     tutorials={tutorials}
                     deleteTutorial={deleteTutorial} />;
             })}
-            <Route path={`/tutorials/${tutorials.id}`} render={props => {
+            {/* <Route path={`/tutorials/`} render={props => {
                 //console.log(props);
                 const currentTutorial = tutorials.find(tutorial => tutorials.id == props.match.params.id);
                 //console.log(currentTutorial);
                 // if currentTutorial is not defined, we can render a redirect instead
-                if (!currentTutorial) {
-                    return props.history.push('/tutorials')
-                }
-                return <UploadForm {...props} submitTutorial={addTutorial} initialValues={currentTutorial} />;
-            }} />
+                // if (!currentTutorial) {
+                //     return props.history.push('/tutorials')
+                // }
+                return <UploadForm {...props} addTutorial={addTutorial} initialValues={currentTutorial} />;
+            }} /> */}
         </div>
     );
 };
