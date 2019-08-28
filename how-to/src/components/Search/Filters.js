@@ -129,7 +129,8 @@ const Subcategory = props => {
   )
 }
 
-export default function Filters() {
+export default function Filters({ match }) {
+  console.log(match);
   return (
     <FilterStyles>
       <div className='searchfields'>
@@ -148,7 +149,7 @@ export default function Filters() {
         <ul>
           {categories.map(category => (
             <li key={category.category}>{category.category}
-              <Link to={`/search/filter/${category.category}`}>
+              <Link to={`${match.url}/${category.category}`}>
                 <img 
                   alt='filter arrow' 
                   src={require('../../images/filter-arrow.png')}
@@ -158,7 +159,7 @@ export default function Filters() {
           ))}
         </ul>
         {categories.map(category => (
-          <Route key={category.category} path={`/search/filter/${category.category}`} 
+          <Route key={category.category} path={`${match.path}/${category.category}`} 
             render={props => <Subcategory {...props} category={category.category} subs={category.subcategories} />}
         />
         ))}
