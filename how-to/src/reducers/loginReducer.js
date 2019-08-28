@@ -18,6 +18,7 @@ const initialState = {
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_START:
+      console.log("IN THE START OF REDUCER");
       return {
         ...state,
         isLoggingIn: true
