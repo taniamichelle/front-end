@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import { Form, Field, withFormik } from "formik";
 import { connect } from "react-redux";
+import * as Yup from "yup";
+import axios from "axios";
 import styled from "styled-components";
 
 import FormWrapper from "../../styled-components/FormWrapper";
@@ -14,32 +18,13 @@ const SignInDiv = styled.div`
 
 const WelcomeDiv = styled.div`
   margin-right: 20px;
-
   p {
     text-align: left;
   }
 `;
 
 const SignIn = props => {
-  const { login, history } = props;
-
-  const [user, setUser] = useState({
-    email: "",
-    password: ""
-  });
-
-  const handleChange = e => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    login(user, history);
-  };
-
+  const { history, login, touched, errors, values, status } = props;
   return (
     <SignInDiv>
       <WelcomeDiv>
@@ -47,36 +32,55 @@ const SignIn = props => {
         <p>We learned a lot while you were gone!</p>
         <p>We're excited to share it with you!</p>
       </WelcomeDiv>
-      <form onSubmit={handleSubmit}>
+      <Form>
         <FormWrapper>
           <h2>Sign In</h2>
-          <label>Email</label>
-          <input
-            name="email"
-            type="text"
-            value={user.email}
-            onChange={handleChange}
-            placeholder="email..."
-          />
+          <label>Email Address</label>
+          <Field name="email" type="text" placeholder="Type email address" />
+          {touched.email && errors.email && <p>{errors.email}</p>}
+          <br />
+          <label>Username</label>
+          <Field name="username" type="text" placeholder="Type username" />
+          {touched.username && errors.username && <p>{errors.username}</p>}
           <br />
           <label>Password</label>
-          <input
-            name="password"
-            type="password"
-            value={user.password}
-            onChange={handleChange}
-            placeholder="password..."
-          />
+          <Field name="password" type="password" placeholder="Type password" />
+          {touched.password && errors.password && <p>{errors.password}</p>}
           <br />
-          {/* <Link to="/search"> */}
+
           <button type="submit">Let's Go!</button>
-          {/* </Link> */}
         </FormWrapper>
-      </form>
+      </Form>
     </SignInDiv>
   );
 };
+
 export default connect(
   null,
   { login }
-)(SignIn);
+)(
+  withFormik({
+    mapPropsToValues({ email, username, password }) {
+      return {
+        email: email || "",
+        username: username || "",
+        password: password || ""
+      };
+    },
+
+    validationSchema: Yup.object().shape({
+      email: Yup.string()
+        .email()
+        .required("Not a valid email address"),
+      username: Yup.string().required("Please choose a username"),
+      password: Yup.string().required("Please enter a password")
+    }),
+
+    handleSubmit(values, { props, setStatus }) {
+      props.login(
+        { email: values.email, password: values.password },
+        props.history
+      );
+    }
+  })(SignIn)
+);

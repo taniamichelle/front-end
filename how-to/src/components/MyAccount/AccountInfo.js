@@ -11,9 +11,11 @@ const AccountInfo = ({ person }) => {
     <div>
       <h4>Account Info</h4>
       <InfoDiv>
-        <p>Name: {person.name}</p>
+        <p>
+          Name: {person.first_name} {person.last_name}
+        </p>
         <hr />
-        <p>Email: {person.email}</p>
+        {/* <p>Email: {person.last_name}</p> */}
         <hr />
       </InfoDiv>
     </div>
