@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Route, Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Route, Link } from "react-router-dom";
 
 // Styles
-import GlobalStyle from './styled-components/GlobalStyle';
-import ContentContainer from './styled-components/ContentContainer';
+import GlobalStyle from "./styled-components/GlobalStyle";
+import ContentContainer from "./styled-components/ContentContainer";
 
 // Components
 import Nav from './components/Nav/Nav';
@@ -14,24 +14,25 @@ import Search from './components/Search/Search';
 import MyAccount from './components/MyAccount/MyAccount';
 import UploadForm from './components/Tutorials/UploadForm';
 import Tutorials from './components/Tutorials/Tutorials';
-import UploadForm from './components/Tutorials/UploadForm';
 
 export default function App() {
   return (
     <div>
       <GlobalStyle />
       <Nav />
-      <Link to='/signin'><img className='logo' src={require('./images/logo.png')} /></Link>
+      <Link to="/signin">
+        <img className="logo" src={require("./images/logo.png")} />
+      </Link>
       <ContentContainer>
-        <Route exact path='/' component={SignIn} />
-        <Route path='/signin' component={SignIn} />
-        <Route path='/signup' component={SignUp} />
-        <Route path='/signupsuccess' component={SignUpSuccess} />
-        <Route path='/search' component={Search} />
+        <Route exact path="/" component={SignIn} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/signupsuccess" component={SignUpSuccess} />
+        <Route path="/search" component={Search} />
         <Route path="/myaccount" component={MyAccount} />
         <Route path="/upload" component={UploadForm} />
         <Route path="/tutorials" component={Tutorials} />
       </ContentContainer>
     </div>
-  )
+  );
 }
