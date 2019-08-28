@@ -7,6 +7,13 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     font-family: 'Helvetica', sans-serif;
   }
+
+  .logo {
+    width: 120px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+  }
 `;
 
 export default GlobalStyle;

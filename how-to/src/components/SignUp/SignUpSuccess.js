@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
+import SignUpHeader from './SignUpHeader';
 import FormWrapper from '../../styled-components/FormWrapper';
 
 const SuccessWrapper = styled(FormWrapper)`
@@ -21,11 +23,11 @@ const SuccessWrapper = styled(FormWrapper)`
 export default function SignUpSuccess() {
   return (
     <div>
-      <h1>It's time to start teaching each other!</h1>
+      <SignUpHeader />
       <SuccessWrapper>
         <h3>SUCCESS!</h3>
         <h4>LET'S GET STARTED</h4>
-        <button>Continue!</button>
+        <Link to='/signin'><button>Continue!</button></Link>
       </SuccessWrapper>
     </div>
   )

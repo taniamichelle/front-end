@@ -17,12 +17,12 @@ const Uploads = props => {
     return (
         <Router>
             <div className='uploads-container'>
-                <header>
+                {/* <header>
                     <h3>How-To</h3>
                     <Link to='/search'>Search</Link>
                     <Link to='/profile'>Profile</Link>
                     <Link to='/sign out'>Sign Out</Link>
-                </header>
+                </header> */}
                 <div className='uploads-content'>
                     <h1>Upload Tutorial</h1>
                     <div className='uploads-form'>
@@ -50,7 +50,7 @@ const Uploads = props => {
                                             type='text'
                                             placeholder='Enter description'
                                             value={upload.description}
-                                            onChange={changeHandler}
+                                            onChange={handleChange}
                                         />
                                     </label>
                                 </div>
@@ -62,7 +62,7 @@ const Uploads = props => {
                                             type='text'
                                             placeholder='Enter key words'
                                             value={upload.keywords}
-                                            onChange={changeHandler}
+                                            onChange={handleChange}
                                         />
                                     </label>
                                 </div>
@@ -74,7 +74,7 @@ const Uploads = props => {
                                             type='text'
                                             placeholder='Enter url'
                                             value={upload.url}
-                                            onChange={changeHandler}
+                                            onChange={handleChange}
                                         />
                                     </label>
                                 </div>

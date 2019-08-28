@@ -1,55 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Field, withFormik } from 'formik';
+import { Route, Link } from 'react-router-dom';
 
-const tempData = [
-  {
-    img: '', 
-    description: 'I love cheese, especially croque monsieur macaaroni cheese. Edam lancashire gouda manchego queso blue castello feta gouda'
-  },
-  {
-    img: '', 
-    description: 'I love cheese, especially croque monsieur macaaroni cheese. Edam lancashire gouda manchego queso blue castello feta gouda'
-  },
-  {
-    img: '', 
-    description: 'I love cheese, especially croque monsieur macaaroni cheese. Edam lancashire gouda manchego queso blue castello feta gouda'
-  },
-]
+import FilterBar from './FilterBar';
+import NewTutorials from './NewTutorials';
+import SearchResults from './SearchResults';
+import Filters from './Filters';
 
-const NewContent = () => {
+import SearchStyles from '../../styled-components/SearchStyles';
+
+const SearchForm = ({ values }) => {
+  const [filterStatus, setFilterStatus] = useState(false);
+
+  const handleReset = () => values.search='';
+
   return (
-    <div>
-      <h3>What's New?</h3>
-      {tempData.map(tutorial => (
-        <div>
-          <p>{tutorial.description}</p>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-const Filter = () => {
-  return (
-    <div>
-      Filters
-    </div>
-  )
-}
-
-const Search = ({ values }) => {
-  return (
-    <div>
+    <SearchStyles>
       <h2>Let's Learn!</h2>
       <Form>
-        <Field name='search' type='text' placeholder='Search' />
-        <button><span>🔍</span></button>
+        <div className='searchbar'>
+          <Field name='search' type='text' placeholder='Search' />
+          <Link to='/search/results'>
+            <img alt='search' 
+              src={require('../../images/search_white.png')} 
+            />
+          </Link>
+        </div>
         <br />
-        <button>Request Tutorial</button>
-        <Filter />
-        <NewContent />
+        <div className='buttons'>
+          {values.search !== '' && <button className='resetBtn' onClick={handleReset}>Reset</button>}
+          <span></span>
+          <button className='requestBtn'>
+            Request<br />Tutorial</button>
+        </div>
+        <FilterBar filterStatus={filterStatus} />
+        <Route exact path='/search' component={NewTutorials} />
+        <Route path='/search/results' render={props => <SearchResults {...props} search={values.search} />} />
+        <Route path='/search/filter' component={Filters} />
       </Form>
-    </div>
+    </SearchStyles>
   )
 }
 
@@ -60,6 +49,6 @@ const FormikSearch = withFormik({
     }
   },
 
-})(Search);
+})(SearchForm);
 
 export default FormikSearch;

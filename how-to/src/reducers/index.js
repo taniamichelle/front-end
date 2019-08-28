@@ -1,10 +1,14 @@
 import { combineReducers } from "redux";
 
 // reducers
-import changePasswordReducer from "./changePassword";
+import changePasswordReducer from "./changePasswordReducer";
+import tutorialReducer from "./tutorialReducer";
+import loginReducer from "./loginReducer";
 
 const rootReducer = combineReducers({
-  changePasswordReducer
+  loginReducer,
+  changePasswordReducer,
+  tutorialReducer
 });
 
 export default rootReducer;
