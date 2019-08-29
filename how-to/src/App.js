@@ -14,6 +14,7 @@ import Search from './components/Search/Search';
 import MyAccount from './components/MyAccount/MyAccount';
 import UploadForm from './components/Upload/UploadForm';
 import Tutorials from './components/Tutorials/Tutorials';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export default function App() {
   return (
