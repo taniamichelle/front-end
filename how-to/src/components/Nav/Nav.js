@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { withRouter } from 'react-router';
+import Signout from '../Signout/Signout';
+
+
 
 const StyledNav = styled.nav`
   display: flex;
@@ -39,7 +42,8 @@ const StyledNav = styled.nav`
   }
 `;
 
-function Nav({ location }) {
+function Nav({ location, buttonLabel }) {
+
   const searchLink = (location.pathname.startsWith('/myaccount') 
     || location.pathname === '/upload'
     || location.pathname === '/tutorial') 
@@ -64,8 +68,11 @@ function Nav({ location }) {
     || location.pathname.startsWith('/myaccount') 
     || location.pathname === '/upload'
     || location.pathname === '/tutorial') 
-    ? <li><NavLink to='/signin'>Sign Out</NavLink></li> 
+    ? <li><Signout /></li> 
     : null;
+
+
+
 
   return (
     <StyledNav>
@@ -79,9 +86,11 @@ function Nav({ location }) {
         {myAccountLink}
         {uploadLink}
         {signOutLink}
+        {/* <Signout /> */}
       </ul>
     </StyledNav>
+    
   )
-}
+ }
 
 export default withRouter(Nav);
