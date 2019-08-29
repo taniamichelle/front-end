@@ -52,7 +52,7 @@ const MyAccount = ({
     <div>
       <h1>My Account</h1>
       <div>
-        <Link to="/editprofile">Edit Account Information</Link>
+        <Link to="/myaccount/editprofile">Edit Account Information</Link>
       </div>
       <div>
         <Link to={`${match.path}/mytutorials`}>My Tutorials</Link>
