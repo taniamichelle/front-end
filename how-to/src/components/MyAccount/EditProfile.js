@@ -24,9 +24,9 @@ const WelcomeDiv = styled.div`
 const EditProfile = props => {
   const { history, login, touched, errors, values, status } = props;
 
-  const [user, setUser] = useState({
-    firstName: props.firstName
-  });
+  // const [user, setUser] = useState({
+  //   firstName: props.firstName
+  // });
 
   if (!props.firstName) {
     return (
@@ -77,7 +77,8 @@ const mapStateToProps = state => {
     firstName: state.fetchUserDataReducer.firstName,
     lastName: state.fetchUserDataReducer.lastName,
     email: state.fetchUserDataReducer.email,
-    username: state.fetchUserDataReducer.username
+    username: state.fetchUserDataReducer.username,
+    id: state.fetchUserDataReducer.id
   };
 };
 
@@ -105,6 +106,7 @@ export default connect(
     }),
 
     handleSubmit(values, { props, setStatus }) {
+      // pass user object, user id, and history object
       props.submitEditedProfile(
         {
           username: values.username,
@@ -112,6 +114,7 @@ export default connect(
           lastName: values.lastName,
           email: values.email
         },
+        props.id,
         props.history
       );
     }
