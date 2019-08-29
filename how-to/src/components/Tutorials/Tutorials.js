@@ -21,7 +21,7 @@ const Tutorials = (props) => {
     // call getTutorials in useEffect
     useEffect(() => {
         getTutorials();
-    }, [getTutorials]);
+    }, []);
 
     const addTutorial = (tutorial) => {
         props.uploadTutorial(tutorial);
