@@ -5,21 +5,18 @@ const TutorialsStyles = styled.div`
 
     .tutorials-container {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
-
-    .tutorials-content {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: flex-end;
-        width: 50%;
-
-        .tutorials-top-content {
-            margin-right: auto;
-            margin-left: auto;
-        }
-    }
+        align-items: center;
+        border: 1px solid blue;
   
+        img {
+            width: 550px;
+            border: 10px solid #333a4d;
+            margin: 0;
+            padding: 0;
+        }
+
     .categories {
         display: flex;
         align-items: center;

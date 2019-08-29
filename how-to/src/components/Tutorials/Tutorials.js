@@ -8,11 +8,10 @@ import TutorialsList from './TutorialsList';
 const Tutorials = props => {
     return (
         <TutorialsStyles>
-            <div ClassName='tutorials-container'>
+            <div className='tutorials-container'>
                 <div className='tutorials-header'>
-
+                    <h1>How to Change a Lightbulb</h1>
                 </div>
-                <h1>How to Change a Lightbulb</h1>
                 <div className='tutorials-content'>
                     <div className='tutorials-top-content'>
                         <img src={require("../../images/video.png")} />
