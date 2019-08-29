@@ -4,11 +4,14 @@ const TutorialsList = (props) => {
     console.log(props);
     return (
         <div>
-            <div className='tutorial-name'>
-                <h1>{props.name}</h1>
+            <div className='tutorials-title'>
+                <p>{props.title}</p>
             </div>
-            <div className='tutorial-bottom-content'>
+            <div className='tutorials-description'>
                 {props.description}
+            </div>
+            <div className='tutorials-helpful'>
+                {props.helpful}
             </div>
         </div>
     );

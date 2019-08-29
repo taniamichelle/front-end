@@ -39,7 +39,7 @@ const Tutorials = props => {
                 </button>
                 {props.tutorialsData && props.tutorialsData.map(tutorial => {
                     return (
-                        <TutorialsList key={tutorial.title} 
+                        <TutorialsList title={tutorial.title} 
                                        description={tutorial.description} 
                                        helpful={tutorial.helpful}  
                         />)}
