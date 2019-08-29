@@ -43,60 +43,42 @@ const UploadForm = ({ addTutorial, tutorial }) => {
                     <h1>Upload Tutorial</h1>
                     <div className='upload-form'>
                         <form onSubmit={handleSubmit}>
-                            {/* <fieldset> */}
-                            <legend>Tutorial Name</legend>
                             <div className='name-field'>
-                                {/* <label>
-                                    Tutorial Name */}
+                                <legend>Tutorial Name</legend>
                                 <input
                                     type='text'
                                     name='name'
-                                    placeholder='Tutorial Name'
                                     value={upload.name}
                                     onChange={handleChange}
                                 />
-                                {/* </label> */}
                             </div>
                             <div className='description-field'>
                                 <legend>Tutorial Description</legend>
-                                {/* <label>
-                                    Tutorial Description */}
-                                <input
+                                <textarea
                                     name='description'
-                                    type='text'
-                                    placeholder='Enter description'
+                                    rows='15'
                                     value={upload.description}
                                     onChange={handleChange}
                                 />
-                                {/* </label> */}
                             </div>
                             <div className='keywords-field'>
                                 <legend>Key Words (separate with comma)</legend>
-                                {/* <label>
-                                    Key Words (separate with comma) */}
                                 <input
                                     name='keywords'
                                     type='text'
-                                    placeholder='Enter keywords'
                                     value={upload.keywords}
                                     onChange={handleChange}
                                 />
-                                {/* </label> */}
                             </div>
                             <div className='url-field'>
                                 <legend>URL</legend>
-                                {/* <label>
-                                    URL */}
                                 <input
                                     name='url'
                                     type='text'
-                                    placeholder='Enter url'
                                     value={upload.url}
                                     onChange={handleChange}
                                 />
-                                {/* </label> */}
                             </div>
-                            {/* </fieldset> */}
                             <button type='submit'>Confirm</button>
                         </form>
                     </div>

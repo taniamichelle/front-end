@@ -22,7 +22,7 @@ export const ModalWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, 0px);
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 80px;
 
   h1 {
     font-size: 36px;
@@ -40,7 +40,7 @@ export const ModalWrapper = styled.div`
   
     textarea {
       max-width: 99%;
-      margin: 5px 0 20px 0;
+      margin: 5px 0 30px 0;
       font-family: 'Helvetica', sans-serif;
       font-size: 18px;
       padding: 5px;

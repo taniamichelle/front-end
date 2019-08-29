@@ -6,7 +6,7 @@ const UploadStyles = styled.div`
     .upload-container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
 
     .file-select-container {
         h3 {
@@ -18,29 +18,183 @@ const UploadStyles = styled.div`
     .upload-content {
         display: flex;
         flex-flow: column nowrap;
+        align-items: flex-end;
+        width: 50%;
 
+        .upload-form {
+            width: 100%;
+            margin: 0;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 620px;
+                justify-content: space-between;
+
+                legend {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+    
+                input {
+                    width: 100%;
+                    box-sizing: border-box;
+                    border: 2px solid #cacbbe;
+                    font-size: 18px;
+                    padding: 10px 5px;
+                    border-radius: 3px;
+                }
+
+                textarea {
+                    box-sizing: border-box;
+                    width: 100%;
+                }
+
+                button {
+                    width: 40%;
+                    font-size: 30px;
+                    align-self: flex-end;
+                }
+            }
+
+            // .name-field {
+            //     input {
+            //         margin-top: 0.4rem;
+            //         margin-bottom: 2rem;
+            //         border: 2px solid gray;
+            //         border-radius: 3px;
+            //         padding: 5px 10px;
+            //         font-size: 18px;
+            //         width: 100%;
+            //         height: 3rem;
+            //     }
+            // }
+        
+            // .description-field {
+            //     input {
+            //         margin-top: 0.4rem;
+            //         margin-bottom: 2rem;
+            //         border: 2px solid gray;
+            //         border-radius: 3px;
+            //         padding: 5px 10px;
+            //         font-size: 18px;
+            //         width: 100%;
+            //         height: 11rem;
+            //     }
+            // }
+            
+            // .keywords-field {
+            //     input {
+            //         margin-top: 0.4rem;
+            //         margin-bottom: 2rem;
+            //         margin-right: 4rem;
+            //         border: 2px solid gray;
+            //         border-radius: 3px;
+            //         padding: 5px 10px;
+            //         font-size: 18px;
+            //         width: 100%;
+            //         height: 3rem;
+            //     }
+            // }
+        
+            // .url-field {
+            //     input {
+            //         margin-top: 0.4rem;
+            //         margin-bottom: 2rem;
+            //         margin-right: 4rem;
+            //         border: 2px solid gray;
+            //         border-radius: 3px;
+            //         padding: 5px 10px;
+            //         font-size: 18px;
+            //         width: 100%;
+            //         height: 3rem;
+            //     }
+            // }
+        
+            button {
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: bold;
+                color: #c4c4be;
+                background-color: #898a7d;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 3px;
+                // margin-left: 20rem;
+            }
+        
+
+        }
     }
+    
+    // .name-field {
+    //     input {
+    //         margin-top: 0.4rem;
+    //         margin-bottom: 2rem;
+    //         margin-right: 4rem;
+    //         border: 2px solid gray;
+    //         border-radius: 3px;
+    //         padding: 5px 10px;
+    //         font-size: 18px;
+    //         width: 100%;
+    //         height: 3rem;
+    //     }
+    // }
 
-    input {
-        margin-right: 4rem;
-        border: 2px solid gray;
-        border-radius: 3px;
-        padding: 5px 10px;
-        font-size: 18px;
-        width: 410px;
-    }
+    // .description-field {
+    //     input {
+    //         margin-top: 0.4rem;
+    //         margin-bottom: 2rem;
+    //         margin-right: 4rem;
+    //         border: 2px solid gray;
+    //         border-radius: 3px;
+    //         padding: 5px 10px;
+    //         font-size: 18px;
+    //         width: 100%;
+    //         height: 11rem;
+    //     }
+    // }
+    
+    // .keywords-field {
+    //     input {
+    //         margin-top: 0.4rem;
+    //         margin-bottom: 2rem;
+    //         margin-right: 4rem;
+    //         border: 2px solid gray;
+    //         border-radius: 3px;
+    //         padding: 5px 10px;
+    //         font-size: 18px;
+    //         width: 100%;
+    //         height: 3rem;
+    //     }
+    // }
 
-    button {
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: bold;
-        color: #c4c4be;
-        background-color: #898a7d;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 3px;
-    }
+    // .url-field {
+    //     input {
+    //         margin-top: 0.4rem;
+    //         margin-bottom: 2rem;
+    //         margin-right: 4rem;
+    //         border: 2px solid gray;
+    //         border-radius: 3px;
+    //         padding: 5px 10px;
+    //         font-size: 18px;
+    //         width: 100%;
+    //         height: 3rem;
+    //     }
+    // }
 
+    // button {
+    //     cursor: pointer;
+    //     font-size: 20px;
+    //     font-weight: bold;
+    //     color: #c4c4be;
+    //     background-color: #898a7d;
+    //     border: none;
+    //     padding: 10px 20px;
+    //     border-radius: 3px;
+    //     margin-left: 20rem;
+    // }
 
     ul {
         padding: 0;

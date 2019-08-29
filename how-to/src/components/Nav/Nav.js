@@ -9,7 +9,19 @@ import Signout from '../Signout/Signout';
 const StyledNav = styled.nav`
   display: flex;
   justify-content: flex-end;
-  margin: 20px 0;
+  margin: 20px auto 0;
+  width: 100%;
+  max-width: 1000px;
+  height: 80px;
+
+  .logo {
+    width: 120px;
+    position: relative;
+    top: 0px;
+    left: -100px;
+    z-index: 9999;
+    margin: 0;
+  }
 
   ul {
     width: 60%;
@@ -23,7 +35,7 @@ const StyledNav = styled.nav`
       
       a {
         text-decoration: none;
-        font-size: 24px;
+        font-size: 30px;
         color: #292929;
       }
     }
@@ -64,6 +76,7 @@ function Nav({ location, buttonLabel }) {
 
   return (
     <StyledNav>
+      <NavLink><img className='logo' alt='logo' src={require('../../images/logo.png')} /></NavLink>
       <ul>
         {location.pathname === '/signin'
           && <li><NavLink to='/signup'>Sign Up</NavLink></li>}

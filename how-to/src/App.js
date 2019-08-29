@@ -20,7 +20,6 @@ export default function App() {
     <div>
       <GlobalStyle />
       <Nav />
-      <Link><img className='logo' alt='logo' src={require('./images/logo.png')} /></Link>
       <ContentContainer>
         <Route exact path="/" component={SignIn} />
         <Route path="/signin" component={SignIn} />
@@ -28,7 +27,6 @@ export default function App() {
         <Route path="/signupsuccess" component={SignUpSuccess} />
         <Route path="/search" component={Search} />
         <Route path="/myaccount" component={MyAccount} />
-        <Route path="/upload" component={UploadForm} />
         <Route path="/tutorials" component={Tutorials} />
       </ContentContainer>
     </div>

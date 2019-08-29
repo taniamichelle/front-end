@@ -28,16 +28,16 @@ const SignIn = props => {
   return (
     <SignInDiv>
       <WelcomeDiv>
-        <h2>Welcome Back</h2>
-        <p>We learned a lot while you were gone!</p>
-        <p>We're excited to share it with you!</p>
+        <h1>Welcome Back</h1>
+        <h3>We learned a lot while you were gone!</h3>
+        <h3>We're excited to share it with you!</h3>
       </WelcomeDiv>
       <Form>
         <FormWrapper>
           <h2>Sign In</h2>
-          <label>Email Address</label>
+          {/* <label>Email Address</label>
           <Field name="email" type="text" placeholder="Type email address" />
-          {touched.email && errors.email && <p>{errors.email}</p>}
+          {touched.email && errors.email && <p>{errors.email}</p>} */}
           <br />
           <label>Username</label>
           <Field name="username" type="text" placeholder="Type username" />
@@ -60,25 +60,21 @@ export default connect(
   { login }
 )(
   withFormik({
-    mapPropsToValues({ email, username, password }) {
+    mapPropsToValues({ username, password }) {
       return {
-        email: email || "",
         username: username || "",
         password: password || ""
       };
     },
 
     validationSchema: Yup.object().shape({
-      email: Yup.string()
-        .email()
-        .required("Not a valid email address"),
       username: Yup.string().required("Please choose a username"),
       password: Yup.string().required("Please enter a password")
     }),
 
     handleSubmit(values, { props, setStatus }) {
       props.login(
-        { email: values.email, password: values.password },
+        { username: values.username, password: values.password },
         props.history
       );
     }

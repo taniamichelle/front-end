@@ -21,7 +21,7 @@ const Tutorials = (props) => {
     // call getTutorials in useEffect
     useEffect(() => {
         getTutorials();
-    }, [getTutorials]);
+    }, []);
 
     const addTutorial = (tutorial) => {
         props.uploadTutorial(tutorial);
@@ -41,27 +41,26 @@ const Tutorials = (props) => {
     return (
         <div>
             <div className='tutorial-header'>
-                <h1>Tutorials</h1>
-                <h2>{tutorials.name}</h2>
-                <button>Save!</button>
-                <button>Helpful!</button>
+
             </div>
-            <Route exact path='/tutorials' render={props => <UploadForm {...props} addTutorial={addTutorial} />} />
-            {tutorials.map(tutorial => {
-                return <TutorialCard key={tutorials.id}
-                    tutorials={tutorials}
-                    deleteTutorial={deleteTutorial} />;
-            })}
-            {/* <Route path={`/tutorials/`} render={props => {
-                //console.log(props);
-                const currentTutorial = tutorials.find(tutorial => tutorials.id == props.match.params.id);
-                //console.log(currentTutorial);
-                // if currentTutorial is not defined, we can render a redirect instead
-                // if (!currentTutorial) {
-                //     return props.history.push('/tutorials')
-                // }
-                return <UploadForm {...props} addTutorial={addTutorial} initialValues={currentTutorial} />;
-            }} /> */}
+            <div className='tutorial-name'>
+                {/* <h1>{props.tutorials.name}</h1> */}
+            </div>
+            <div className='tutorial-top-content'>
+                <img src={require("../../images/video.png")} />
+                <button className='save-btn'>Save!</button>
+                <button className='helpful-btn'>Helpful!</button>
+                <button className='not-helpful-btn'>Didn't Help...</button>
+            </div>
+            <div className='tutorial-bottom-content'>
+                {/* {props.tutorials.description} */}
+                <Route path="/upload" render={props => <UploadForm {...props} addTutorial={addTutorial} />} />
+                {props.tutorials.map(tutorial => {
+                    return <TutorialCard key={props.tutorials.id}
+                        tutorials={props.tutorials}
+                        deleteTutorial={props.deleteTutorial} editTutorial={props.editTutorial} />;
+                })}
+            </div>
         </div>
     );
 };
