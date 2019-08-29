@@ -13,13 +13,28 @@ const TutorialsStyles = styled.div`
             margin: 0;
         }
 
+        .back-btn {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+        
+            .back-arrow {
+                width: 40px;
+                transform: scaleX(-1);
+            }
+        }
+
         .tutorials-content {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        img {
+        .video-img {
             width: 550px;
             height: 300px;
             border: 10px solid #333a4d;

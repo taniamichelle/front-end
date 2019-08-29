@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Loader from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getTutorialData } from '../../actions/TutorialData';
 import TutorialsStyles from '../../styled-components/TutorialsStyles';
@@ -9,11 +10,10 @@ const Tutorials = props => {
     return (
         <TutorialsStyles>
             <div className='tutorials-container'>
-                <div className='tutorials-header'>
-                    <h1>How to Change a Lightbulb</h1>
-                </div>
+                <h1>How to Change a Lightbulb</h1>
+                <Link className='back-btn' to='/search'><img className='back-arrow' alt='back arrow' src={require('../../images/filter-arrow.png')} />Back</Link>
                 <div className='tutorials-content'>
-                    <img src={require("../../images/video.png")} />
+                    <img className='video-img' src={require("../../images/video.png")} />
                     <div className='tutorials-middle-content'>
                         <button className='save-btn'>Save!</button>
                         <div className='help-btns'>
