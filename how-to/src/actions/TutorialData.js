@@ -20,6 +20,26 @@ export const getTutorialData = () => {
     };
 };
 
+export const NEW_TUTORIALS_START = 'NEW_TUTORIALS_START';
+export const NEW_TUTORIALS_SUCCESS = 'NEW_TUTORIALS_SUCCESS';
+export const NEW_TUTORIALS_FAILURE = 'NEW_TUTORIALS_FAILURE';
+
+export const newTutorialData = () => {
+    return dispatch => {
+        dispatch({ type: NEW_TUTORIALS_START });
+        axiosWithAuth()
+            .get('https://how-to-bw.herokuapp.com/api/tutorials')
+            .then(res => {
+                // res.data
+                console.log(res);
+                dispatch({ type: NEW_TUTORIALS_SUCCESS, payload: res.data });
+            })
+            .catch(err => {
+                dispatch({ type: NEW_TUTORIALS_FAILURE, payload: err.response });
+            });
+    };
+};
+
 export const UPLOAD_TUTORIAL_START = 'UPLOAD_TUTORIAL_START';
 export const UPLOAD_TUTORIAL_SUCCESS = 'UPLOAD_TUTORIAL_SUCCESS';
 export const UPLOAD_TUTORIAL_FAILURE = 'UPLOAD_TUTORIAL_FAILURE';

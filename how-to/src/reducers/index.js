@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 // reducers
-import changePasswordReducer from "./changePasswordReducer";
+import editProfileReducer from "./editProfileReducer";
 import tutorialReducer from "./tutorialReducer";
 import loginReducer from "./loginReducer";
 import fetchUserDataReducer from "./fetchUserDataReducer";
@@ -9,7 +9,7 @@ import fetchUserDataReducer from "./fetchUserDataReducer";
 const rootReducer = combineReducers({
   loginReducer,
   fetchUserDataReducer,
-  changePasswordReducer,
+  editProfileReducer,
   tutorialReducer
 });
 
