@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 
 // Styles
 import GlobalStyle from "./styled-components/GlobalStyle";
@@ -23,15 +23,21 @@ export default function App() {
       <GlobalStyle />
       <Nav />
       <ContentContainer>
-        <Route exact path="/" component={SignIn} />
-        <Route path="/signin" component={SignIn} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/signupsuccess" component={SignUpSuccess} />
-        <PrivateRoute path="/search" component={Search} />
-        <PrivateRoute path="/myaccount" component={MyAccount} />
-        <PrivateRoute path="/tutorials" component={Tutorials} />
-        <PrivateRoute path="/editprofile" component={EditProfile} />
-        <PrivateRoute path="/upload" component={UploadForm} />
+        <Switch>
+          <Route exact path="/" component={SignIn} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/signupsuccess" component={SignUpSuccess} />
+          <PrivateRoute path="/search" component={Search} />
+          <PrivateRoute
+            exact
+            path="/myaccount/editprofile"
+            component={EditProfile}
+          />
+          <PrivateRoute path="/myaccount" component={MyAccount} />
+          <PrivateRoute path="/tutorials" component={Tutorials} />
+          <PrivateRoute path="/upload" component={UploadForm} />
+        </Switch>
       </ContentContainer>
     </div>
   );
