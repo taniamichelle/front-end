@@ -1,60 +1,74 @@
 import React, { useState, useEffect } from 'react';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
 import UploadForm from './UploadForm';
 import TutorialCard from './TutorialCard';
-import { getTutorialData } from '../actions/TutorialData';
+import {
+    getTutorialData,
+    uploadTutorial,
+    editTutorial,
+    deleteTutorial
+} from '../../actions/TutorialData';
+import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const Tutorials = (props) => {
-    const [tutorialsList, setutorialsList] = useState([]);
+    const [tutorials, setTutorials] = useState([]);
 
     // this fxn performs get request and updates our state
     const getTutorials = () => {
-        setTutorialsList(res.data);
+        props.getTutorialData(tutorials);
     };
 
     // call getTutorials in useEffect
     useEffect(() => {
         getTutorials();
-    }, []);
+    }, [getTutorials]);
 
-    const addTutorial = tutorial => {
-        setTutorialsList(res.data)
+    const addTutorial = (tutorial) => {
+        props.uploadTutorial(tutorial);
+        props.history.push('/tutorials');
     };
 
-    const editTutorial = editedTutorial => {
-        setTutorialsList(res.data);
+    const editFunction = (tutorial) => {
+        props.editTutorial(tutorial);
+        props.history.push('/tutorials');
     };
 
-    const deleteTutorial = id => {
-        setTutorialsList(res.data)
+    const deleteFunction = (tutorial) => {
+        props.deleteTutorial(tutorial);
+        props.history.push('/tutorials');
     };
 
     return (
         <div>
             <div className='tutorial-header'>
                 <h1>Tutorials</h1>
-                <h2>{tutorial.name}</h2>
+                <h2>{tutorials.name}</h2>
                 <button>Save!</button>
                 <button>Helpful!</button>
             </div>
-            <Route exact path='/tutorials' render={props => <UploadForm {...props} submitTutorial={addTutorial} />} />
-            {tutorialsList.map(tutorial => {
-                return <TutorialCard key={tutorial.id}
-                    tutorial={tutorial}
+            <Route exact path='/tutorials' render={props => <UploadForm {...props} addTutorial={addTutorial} />} />
+            {tutorials.map(tutorial => {
+                return <TutorialCard key={tutorials.id}
+                    tutorials={tutorials}
                     deleteTutorial={deleteTutorial} />;
             })}
-            <Route path='/tutorials/edit/:id' render={props => {
+            {/* <Route path={`/tutorials/`} render={props => {
                 //console.log(props);
-                const currentTutorial = tutorialsList.find(tutorial => tutorial.id == props.match.params.id);
+                const currentTutorial = tutorials.find(tutorial => tutorials.id == props.match.params.id);
                 //console.log(currentTutorial);
                 // if currentTutorial is not defined, we can render a redirect instead
-                if (!currentTutorial) {
-                    return <Redirect to='/tutorials' />
-                }
-                return <UploadForm {...props} submitTutorial={editTutorial} initialValues={currentFriend} />;
-            }} />
+                // if (!currentTutorial) {
+                //     return props.history.push('/tutorials')
+                // }
+                return <UploadForm {...props} addTutorial={addTutorial} initialValues={currentTutorial} />;
+            }} /> */}
         </div>
     );
 };
 
-export default Tutorials;
+const mapStateToProps = (state) => {
+    return {
+        tutorialsData: state.tutorialReducer.tutorialsData
+    };
+};
+export default connect(mapStateToProps, { getTutorialData, uploadTutorial, editTutorial, deleteTutorial })(Tutorials);

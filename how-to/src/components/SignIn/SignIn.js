@@ -1,11 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Form, Field, withFormik } from 'formik';
-import * as Yup from 'yup';
-import axios from 'axios';
-import styled from 'styled-components';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Form, Field, withFormik } from "formik";
+import { connect } from "react-redux";
+import * as Yup from "yup";
+import axios from "axios";
+import styled from "styled-components";
 
-import FormWrapper from '../../styled-components/FormWrapper';
+import FormWrapper from "../../styled-components/FormWrapper";
+
+// actions
+import { login } from "../../actions/loginAction";
 
 const SignInDiv = styled.div`
   display: flex;
@@ -13,14 +17,14 @@ const SignInDiv = styled.div`
 `;
 
 const WelcomeDiv = styled.div`
-  margin-right: 20px;  
-
+  margin-right: 20px;
   p {
     text-align: left;
   }
 `;
 
-const SignIn = ({ touched, errors, values, status }) => {
+const SignIn = props => {
+  const { history, login, touched, errors, values, status } = props;
   return (
     <SignInDiv>
       <WelcomeDiv>
@@ -31,61 +35,52 @@ const SignIn = ({ touched, errors, values, status }) => {
       <Form>
         <FormWrapper>
           <h2>Sign In</h2>
-          
           <label>Email Address</label>
-          <Field name='email' type='text' placeholder='Type email address' />
-          {touched.email && errors.email && (
-            <p>{errors.email}</p>
-          )}
-          
+          <Field name="email" type="text" placeholder="Type email address" />
+          {touched.email && errors.email && <p>{errors.email}</p>}
           <br />
-          
           <label>Username</label>
-          <Field name='username' type='text' placeholder='Type username' />
-          {touched.username && errors.username && (
-            <p>{errors.username}</p>
-          )}
-          
+          <Field name="username" type="text" placeholder="Type username" />
+          {touched.username && errors.username && <p>{errors.username}</p>}
           <br />
-          
           <label>Password</label>
-          <Field name='password' type='password' placeholder='Type password' />
-          {touched.password && errors.password && (
-            <p>{errors.password}</p>
-          )}
-          
+          <Field name="password" type="password" placeholder="Type password" />
+          {touched.password && errors.password && <p>{errors.password}</p>}
           <br />
-          
-          <Link to='/search'><button type='submit'>Let's Go!</button></Link>
+
+          <button type="submit">Let's Go!</button>
         </FormWrapper>
       </Form>
     </SignInDiv>
-  )
-}
+  );
+};
 
-const FormikSignIn = withFormik({
-  mapPropsToValues({ email, username, password }) {
-    return {
-      email: email || '',
-      username: username || '',
-      password: password || '',
+export default connect(
+  null,
+  { login }
+)(
+  withFormik({
+    mapPropsToValues({ email, username, password }) {
+      return {
+        email: email || "",
+        username: username || "",
+        password: password || ""
+      };
+    },
+
+    validationSchema: Yup.object().shape({
+      email: Yup.string()
+        .email()
+        .required("Not a valid email address"),
+      username: Yup.string().required("Please choose a username"),
+      password: Yup.string().required("Please enter a password")
+    }),
+
+    handleSubmit(values, { props, setStatus }) {
+      props.login(
+        { email: values.email, password: values.password },
+        props.history
+      );
     }
-  },
-
-  validationSchema: Yup.object().shape({
-    email: Yup.string().email().required('Not a valid email address'),
-    username: Yup.string().required('Please choose a username'),
-    password: Yup.string().required('Please enter a password'),
-  }),
-
-  handleSubmit(values, { setStatus }) {
-    axios
-      .post('https://reqres.in/api/users', values)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => console.log(err));
-  }
-})(SignIn);
-
-export default FormikSignIn;
+  })(SignIn)
+);

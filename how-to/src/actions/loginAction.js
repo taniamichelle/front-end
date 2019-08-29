@@ -5,14 +5,25 @@ export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
-export const login = user => dispatch => {
+export const login = (user, history) => dispatch => {
+  // hard coded user
+  // const theUser = {
+  //   email: "eve.holt@reqres.in",
+  //   password: "cityslicka"
+  // };
+  console.log("IN DISPATCH");
   dispatch({ type: LOGIN_START });
 
   axios
-    .post(`http://someurl.com/users/`, user)
+    .post(`https://reqres.in/api/login`, user)
     .then(res => {
-      localStorage.getItem("token");
-      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+      console.log("THE RESPONSE:", res.data.token);
+      localStorage.setItem("token", res.data.token);
+      return axios.get("https://reqres.in/api/users/2").then(res => {
+        console.log("USER LOGIN:", res.data.data);
+        dispatch({ type: LOGIN_SUCCESS, payload: res.data.data });
+        history.push("/myaccount");
+      });
     })
     .catch(err =>
       dispatch({

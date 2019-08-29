@@ -1,35 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { Modal, ModalHeader, ModalBody, ModalFooter, FormText, Label, Input, FormGroup } from 'reactstrap';
-import styled from 'styled-components';
+import { Modal, Input } from 'reactstrap';
 
-const Button = styled.button`
-  display: inline-block;
-  color: white;
-  background-color: blue;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid blue;
-  border-radius: 3px;
-  display: block;
-  width: 92px;
-`;
-
-const SubmitButton = styled.button`
-    display: inline-block;
-    color: white;
-    background-color: blue;
-    font-size: 1em;
-    margin-left: 38em;
-    margin-top: -2.9em;
-    padding: 0.25em 1em;
-    border: 2px solid blue;
-    border-radius: 3px;
-    display: block;
-    width: 92px;
-`;
-
+import { ModalWrapper, PageMask, Button } from '../../styled-components/RequestStyles';
 
 class Request extends React.Component {
   constructor(props) {
@@ -37,16 +10,19 @@ class Request extends React.Component {
     this.state = {
       modal: false,
       name: '',
-      job: ''
+      job: '',
+      requestsuccess: false,
     };
 
-    // this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChanges = this.handleChanges.bind(this);
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modal: !prevState.modal,
+      requestsuccess: false,
     }));
   }
 
@@ -55,36 +31,42 @@ class Request extends React.Component {
     axios
       .post('https://reqres.in/api/users', {name: this.state.name, job: this.state.job})
       .then(res => {
-        // this.setState({name: res.data.name, job: res.data.job})
-        this.setState({name: '', job: ''})
+        this.setState({name: res.data.name, job: res.data.job})
         console.log(res);
+        this.setState({requestsuccess: true})
+        this.setState({name: '', job: ''})
       })
       .catch(err => console.log(err));
   }
 
-  handleChanges = (e) => {
+  handleChanges = e => {
       this.setState( { [e.target.name] : e.target.value } )
   }
 
   render() {
     return (
       <div>
-        <Button onClick={this.toggle}>{this.props.buttonLabel} Request Tutorial </Button>
+        <Button onClick={this.toggle}>{this.props.buttonLabel}Request<br/>Tutorial</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <h1>Tutorial Request Form</h1>
-          <ModalBody>
-              <h2>What do you need a tutorial of? Please be detailed.</h2>
-        <FormGroup>
-          <Label for="exampleText"></Label>
-          
-          <Input type="textarea" onChange={this.handleChanges} value={this.state.name} rows="12" cols="100" name="name" id="exampleText" />
-        </FormGroup>
-           
-          </ModalBody>
-          <ModalFooter>
-            <Button onClick={this.toggle}>Cancel</Button>{' '}
-            <SubmitButton onClick={this.handleSubmit}>Submit</SubmitButton>
-          </ModalFooter>
+          <PageMask />
+          <ModalWrapper>
+            {!this.state.requestsuccess && (<div>
+              <h1>Tutorial Request Form</h1>
+              <div className='modal-form'>
+                <h2>What do you need a tutorial of? Please be detailed.</h2>
+                <Input type="textarea" onChange={this.handleChanges} value={this.state.name} rows="10" cols='90' name="name" id="exampleText" />
+                <div className='modal-buttons'>
+                  <Button onClick={this.toggle}>Cancel</Button>
+                  <Button onClick={this.handleSubmit}>Submit</Button>
+                </div>
+              </div>
+            </div>)}
+            {this.state.requestsuccess && (<div className='request-success'>
+              <h1>SUCCESS!</h1>
+              <h2>Your request has been submitted! Thank you!</h2>
+              <Button onClick={this.toggle}>CONTINUE!</Button>
+            </div>)}
+          </ModalWrapper>
         </Modal>
       </div>
     );

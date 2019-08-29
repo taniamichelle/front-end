@@ -1,96 +1,117 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { uploadTutorial } from '../actions/TutorialData';
+import UploadStyles from '../../styled-components/UploadStyles';
 
-const UploadForm = ({ uploadTutorial }) => {
+const UploadForm = ({ addTutorial, tutorial }) => {
+    console.log(addTutorial);
     const [upload, setUpload] = useState({
-        tutorial: {
-            name: '',
-            description: '',
-            keywords: ''
-        }
+        name: '',
+        description: '',
+        keywords: '',
+        url: ''
     });
 
     const handleChange = event => setUpload({ ...upload, [event.target.name]: event.target.value });
 
     const handleSubmit = event => {
         event.preventDefault();
-        uploadTutorial(tutorial);
+        addTutorial(tutorial);
         setUpload('');
     };
 
     return (
-        <div className='upload-container'>
-            <header>
-                <h3>How-To</h3>
-            </header>
-            <div className='upload-content'>
-                <h1>Upload Tutorial</h1>
-                <div className='upload-form'>
-                    <form onSubmit={handleSubmit}>
-                        <fieldset>
-                            <legend>Upload a Tutorial</legend>
+        <UploadStyles>
+            <div className='upload-container'>
+                <div className='file-select-container'>
+                    <h3>Select File</h3>
+                    <img className="select-file-img" src={require("../../images/select-file.png")} />
+                    <div className='select-categories'>
+                        <h1>Select Categories</h1>
+                        <ul>
+                            <li>Appliances <img src={require("../../images/filter-arrow.png")} /></li>
+                            <li>Arts and Crafts <img src={require("../../images/filter-arrow.png")} /></li>
+                            <li>Automotive <img src={require("../../images/filter-arrow.png")} /></li>
+                            <li>Education <img src={require("../../images/filter-arrow.png")} /></li>
+                            <li>Electronics <img src={require("../../images/filter-arrow.png")} /></li>
+                            <li>Fishing <img src={require("../../images/filter-arrow.png")} /></li>
+                            <li>Home <img src={require("../../images/filter-arrow.png")} /></li>
+                            <li>Hunting <img src={require("../../images/filter-arrow.png")} /></li>
+                            <li>Yard <img src={require("../../images/filter-arrow.png")} /></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className='upload-content'>
+                    <h1>Upload Tutorial</h1>
+                    <div className='upload-form'>
+                        <form onSubmit={handleSubmit}>
+                            {/* <fieldset> */}
+                            <legend>Tutorial Name</legend>
                             <div className='name-field'>
-                                <label>
-                                    Tutorial Name
-                                    <input
-                                        type='text'
-                                        name='name'
-                                        placeholder='Tutorial Name'
-                                        value={upload.name}
-                                        onChange={handleChange}
-                                    />
-                                </label>
+                                {/* <label>
+                                    Tutorial Name */}
+                                <input
+                                    type='text'
+                                    name='name'
+                                    placeholder='Tutorial Name'
+                                    value={upload.name}
+                                    onChange={handleChange}
+                                />
+                                {/* </label> */}
                             </div>
                             <div className='description-field'>
-                                <label>
-                                    Tutorial Description
+                                <legend>Tutorial Description</legend>
+                                {/* <label>
+                                    Tutorial Description */}
                                 <input
-                                        name='description'
-                                        type='text'
-                                        placeholder='Enter description'
-                                        value={upload.description}
-                                        onChange={handleChange}
-                                    />
-                                </label>
+                                    name='description'
+                                    type='text'
+                                    placeholder='Enter description'
+                                    value={upload.description}
+                                    onChange={handleChange}
+                                />
+                                {/* </label> */}
                             </div>
                             <div className='keywords-field'>
-                                <label>
-                                    Key Words (separate with comma)
+                                <legend>Key Words (separate with comma)</legend>
+                                {/* <label>
+                                    Key Words (separate with comma) */}
                                 <input
-                                        name='keywords'
-                                        type='text'
-                                        placeholder='Enter key words'
-                                        value={upload.keywords}
-                                        onChange={handleChange}
-                                    />
-                                </label>
+                                    name='keywords'
+                                    type='text'
+                                    placeholder='Enter keywords'
+                                    value={upload.keywords}
+                                    onChange={handleChange}
+                                />
+                                {/* </label> */}
                             </div>
                             <div className='url-field'>
-                                <label>
-                                    URL
+                                <legend>URL</legend>
+                                {/* <label>
+                                    URL */}
                                 <input
-                                        name='url'
-                                        type='text'
-                                        placeholder='Enter url'
-                                        value={upload.url}
-                                        onChange={handleChange}
-                                    />
-                                </label>
+                                    name='url'
+                                    type='text'
+                                    placeholder='Enter url'
+                                    value={upload.url}
+                                    onChange={handleChange}
+                                />
+                                {/* </label> */}
                             </div>
-                        </fieldset>
-                        <button type='submit'>Confirm</button>
-                    </form>
+                            {/* </fieldset> */}
+                            <button type='submit'>Confirm</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </UploadStyles>
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        tutorialData: state.tutorialReducer.tutorialData
-    };
-};
+export default UploadForm;
 
-export default connect(mapStateToProps, uploadTutorial)(UploadForm);
+// const mapStateToProps = (state) => {
+//     return {
+//         tutorialData: state.tutorialReducer.tutorialData
+//     };
+// };
+
+// export default connect(mapStateToProps, uploadTutorial)(UploadForm);

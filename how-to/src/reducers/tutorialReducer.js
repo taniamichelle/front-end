@@ -11,12 +11,15 @@ import {
     DELETE_TUTORIAL_START,
     DELETE_TUTORIAL_SUCCESS,
     DELETE_TUTORIAL_FAILURE,
-} from '../actions';
+} from '../actions/TutorialData';
 
 export const initialState = {
     tutorialsData: [],
     isLoading: false,
-    error: ''
+    error: '',
+    uploadingData: false,
+    editingData: false,
+    deletingData: false
 }
 
 const tutorialReducer = (state = initialState, action) => {
@@ -32,19 +35,58 @@ const tutorialReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                smurfsData: action.payload,
+                tutorialsData: action.payload,
+                error: ''
+            }
+        case FETCH_TUTORIALS_FAILURE:
+            return {
+                ...state,
                 error: ''
             }
         case UPLOAD_TUTORIAL_START:
             return {
-                ...state
+                ...state,
+                uploadingData: true
             }
         case UPLOAD_TUTORIAL_SUCCESS:
             return {
                 ...state,
+                uploadingData: false,
                 tutorialsData: action.payload
             }
         case UPLOAD_TUTORIAL_FAILURE:
+            return {
+                ...state,
+                error: ''
+            }
+        case EDIT_TUTORIAL_START:
+            return {
+                ...state,
+                editingData: true
+            }
+        case EDIT_TUTORIAL_SUCCESS:
+            return {
+                ...state,
+                editingData: false,
+                tutorialsData: action.payload
+            }
+        case EDIT_TUTORIAL_FAILURE:
+            return {
+                ...state,
+                error: ''
+            }
+        case DELETE_TUTORIAL_START:
+            return {
+                ...state,
+                deletingData: true,
+            }
+        case DELETE_TUTORIAL_SUCCESS:
+            return {
+                ...state,
+                deletingData: false,
+                tutorialsData: action.payload
+            }
+        case DELETE_TUTORIAL_FAILURE:
             return {
                 ...state,
                 error: ''

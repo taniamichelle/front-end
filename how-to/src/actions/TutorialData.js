@@ -8,7 +8,7 @@ export const getTutorialData = () => {
     return dispatch => {
         dispatch({ type: FETCH_TUTORIALS_START });
         axiosWithAuth()
-            .get('https://jsonplaceholder.typicode.com/posts')
+            .get('https://how-to-bw.herokuapp.com/api/tutorials')
             .then(res => {
                 // res.data
                 console.log(res);
@@ -29,12 +29,13 @@ export const uploadTutorial = (tutorial) => {
         dispatch({ type: UPLOAD_TUTORIAL_START });
         console.log(tutorial);
         axiosWithAuth()
-            .post('https://jsonplaceholder.typicode.com/posts', tutorial)
+            .post('https://how-to-bw.herokuapp.com/api/tutorials', tutorial)
             .then(res => {
-                //console.log(res);
+                console.log(res);
                 dispatch({ type: UPLOAD_TUTORIAL_SUCCESS, payload: res.data });
             })
             .catch(err => {
+                console.log(err.response);
                 dispatch({ type: UPLOAD_TUTORIAL_FAILURE, payload: err.response });
             });
     };
@@ -49,7 +50,7 @@ export const editTutorial = (tutorial) => {
         dispatch({ type: EDIT_TUTORIAL_START });
         console.log(tutorial);
         axiosWithAuth()
-            .put('https://jsonplaceholder.typicode.com/posts', tutorial)
+            .put(`https://how-to-bw.herokuapp.com/api/tutorials/${tutorial.id}`, tutorial)
             .then(res => {
                 //console.log(res);
                 dispatch({ type: EDIT_TUTORIAL_SUCCESS, payload: res.data });
@@ -69,7 +70,7 @@ export const deleteTutorial = (tutorial) => {
         dispatch({ type: DELETE_TUTORIAL_START });
         console.log(tutorial);
         axiosWithAuth()
-            .delete('https://jsonplaceholder.typicode.com/posts', tutorial)
+            .delete(`https://how-to-bw.herokuapp.com/api/tutorials/${tutorial.id}`)
             .then(res => {
                 //console.log(res);
                 dispatch({ type: DELETE_TUTORIAL_SUCCESS, payload: res.data });
