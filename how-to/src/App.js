@@ -12,7 +12,7 @@ import SignUp from "./components/SignUp/SignUp";
 import SignUpSuccess from "./components/SignUp/SignUpSuccess";
 import Search from "./components/Search/Search";
 import MyAccount from "./components/MyAccount/MyAccount";
-import UploadForm from "./components/Tutorials/UploadForm";
+import UploadForm from "./components/Upload/UploadForm";
 import Tutorials from "./components/Tutorials/Tutorials";
 import EditProfile from "./components/MyAccount/EditProfile";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
@@ -27,11 +27,11 @@ export default function App() {
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
         <Route path="/signupsuccess" component={SignUpSuccess} />
-        <Route path="/search" component={Search} />
-        <Route path="/myaccount" component={MyAccount} />
-        <Route path="/tutorials" component={Tutorials} />
-        <Route path="/editprofile" component={EditProfile} />
-        <Route path="/upload" component={UploadForm} />
+        <PrivateRoute path="/search" component={Search} />
+        <PrivateRoute path="/myaccount" component={MyAccount} />
+        <PrivateRoute path="/tutorials" component={Tutorials} />
+        <PrivateRoute path="/editprofile" component={EditProfile} />
+        <PrivateRoute path="/upload" component={UploadForm} />
       </ContentContainer>
     </div>
   );
