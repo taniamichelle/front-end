@@ -6,14 +6,15 @@ import GlobalStyle from "./styled-components/GlobalStyle";
 import ContentContainer from "./styled-components/ContentContainer";
 
 // Components
-import Nav from './components/Nav/Nav';
-import SignIn from './components/SignIn/SignIn';
-import SignUp from './components/SignUp/SignUp';
-import SignUpSuccess from './components/SignUp/SignUpSuccess';
-import Search from './components/Search/Search';
-import MyAccount from './components/MyAccount/MyAccount';
-import UploadForm from './components/Tutorials/UploadForm';
-import Tutorials from './components/Tutorials/Tutorials';
+import Nav from "./components/Nav/Nav";
+import SignIn from "./components/SignIn/SignIn";
+import SignUp from "./components/SignUp/SignUp";
+import SignUpSuccess from "./components/SignUp/SignUpSuccess";
+import Search from "./components/Search/Search";
+import MyAccount from "./components/MyAccount/MyAccount";
+import UploadForm from "./components/Tutorials/UploadForm";
+import Tutorials from "./components/Tutorials/Tutorials";
+import EditProfile from "./components/MyAccount/EditProfile";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/search" component={Search} />
         <Route path="/myaccount" component={MyAccount} />
         <Route path="/tutorials" component={Tutorials} />
+        <Route path="/editprofile" component={EditProfile} />
       </ContentContainer>
     </div>
   );
