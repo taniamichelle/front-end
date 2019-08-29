@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import UploadForm from './UploadForm';
-import TutorialCard from './TutorialCard';
+// import TutorialCard from './TutorialCard';
 
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';

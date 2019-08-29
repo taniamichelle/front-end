@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import UploadForm from './UploadForm';
-import TutorialCard from './TutorialCard';
+// import TutorialCard from './TutorialCard';
 import {
     getTutorialData,
     uploadTutorial,
@@ -44,11 +44,11 @@ const Uploads = (props) => {
                 <h1>Tutorials</h1>
             </div>
             <UploadForm {...props} addTutorial={addTutorial} deleteTutorial={deleteTutorial} editTutorial={editTutorial} />;
-            {props.tutorials.map(tutorial => {
+            {/* {props.tutorials.map(tutorial => {
                 return <TutorialCard key={props.tutorials.id}
                     tutorials={props.tutorials}
                     deleteTutorial={props.deleteTutorial} editTutorial={props.editTutorial} />;
-            })}
+            })} */}
         </div>
     );
 };

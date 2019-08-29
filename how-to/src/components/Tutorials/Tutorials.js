@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
-import TutorialCard from './TutorialCard';
+// import TutorialCard from './TutorialCard';
 import { getTutorialData } from '../../actions/TutorialData';
 
 const Tutorials = props => {
@@ -35,7 +35,7 @@ const Tutorials = props => {
                         'More Tutorials'
                     )}
             </button>
-            {props.tutorialData && props.tutorialData.map(data => <TutorialCard key={data.name} tutorial={data} />)}
+            {/* {props.tutorialData && props.tutorialData.map(data => <TutorialCard key={data.name} tutorial={data} />)} */}
             <div className='upload-tutorial'>
 
             </div>
