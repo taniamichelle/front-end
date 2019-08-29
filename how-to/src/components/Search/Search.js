@@ -47,8 +47,6 @@ const SearchForm = ({ values }) => {
           {values.search !== '' && <button className='resetBtn' onClick={handleReset}>Reset</button>}
           <span></span>
           <Request />
-          {/* <button className='button-default requestBtn' onClick={toggle}>Request<br />Tutorial</button>
-          <RequestModal isShowing={isShowing} hide={toggle} /> */}
         </div>
         <FilterBar filterStatus={filterStatus} />
         <Route exact path='/search' render={props => <NewTutorials {...props} />} />
