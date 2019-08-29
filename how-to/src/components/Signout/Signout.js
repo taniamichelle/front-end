@@ -11,6 +11,7 @@ const SignoutButton = styled.button`
   border: none;
   font-size: 30px;
   cursor: pointer;
+  outline: none;
 `;
 
 const SignoutModal = styled(ModalWrapper)`
