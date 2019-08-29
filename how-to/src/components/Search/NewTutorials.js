@@ -29,12 +29,12 @@ const NewTutorials = (props) => {
         <TutorialDiv>
           <div className='tutorials-list'>
             {props.tutorialsData && props.tutorialsData.map(tutorial => {
-                  return (
-                      <TutorialsList title={tutorial.title} 
-                                      description={tutorial.description} 
-                                      helpful={tutorial.helpful}  
-                      />)}
-                  )}
+              return (
+                <TutorialsList title={tutorial.title} 
+                                description={tutorial.description} 
+                                helpful={tutorial.helpful}  
+                />)}
+              )}
           </div>
         </TutorialDiv>
     </div>

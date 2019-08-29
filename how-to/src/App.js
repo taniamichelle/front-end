@@ -43,17 +43,3 @@ export default function App() {
   );
 }
 
-{
-  /*
-  PRIVATE ROUTE: 
-  <ContentContainer>
-  <Route exact path="/" component={SignIn} />
-  <Route path="/signin" component={SignIn} />
-  <Route path="/signup" component={SignUp} />
-  <Route path="/signupsuccess" component={SignUpSuccess} />
-  <PrivateRoute path="/protected" component={Search} />
-  <PrivateRoute path="/protected" component={MyAccount} />
-  <PrivateRoute path="/protected" component={Tutorials} />
-  <PrivateRoute path="/protected" component={UploadForm} />
-</ContentContainer> */
-}
