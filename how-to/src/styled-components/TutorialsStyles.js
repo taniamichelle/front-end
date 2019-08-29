@@ -10,33 +10,29 @@ const TutorialsStyles = styled.div`
         align-items: center;
         border: 1px solid blue;
   
+        h1 {
+            margin: 0;
+        }
+
         img {
             width: 550px;
-            border: 10px solid #333a4d;
-            margin: 0;
-            padding: 0;
         }
 
-    .categories {
-        display: flex;
-        align-items: center;
-    }
+    // .subwrap {
+    //     margin-left: 30px;
+    // }
 
-    .subwrap {
-        margin-left: 30px;
-    }
+    // .subs {
+    //     max-height: 300px;
+    //     width: 500px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     flex-wrap: wrap;
 
-    .subs {
-        max-height: 300px;
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-
-        p {
-            font-size: 18px;
-            margin: 9px 0;
-        }
+    //     p {
+    //         font-size: 18px;
+    //         margin: 9px 0;
+    //     }
     }
 `;
 
