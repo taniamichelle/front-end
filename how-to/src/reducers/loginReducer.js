@@ -5,11 +5,6 @@ import {
 } from "../actions/loginAction";
 
 const initialState = {
-  id: "",
-  firstName: "",
-  lastName: "",
-  username: "",
-  email: "",
   isLoggingIn: false,
   isLoggedIn: false,
   error: ""
@@ -28,8 +23,7 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggingIn: false,
-        isLoggedIn: true,
-        ...action.payload
+        isLoggedIn: true
       };
 
     case LOGIN_FAILURE:
