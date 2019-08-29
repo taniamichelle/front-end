@@ -1,45 +1,47 @@
 import React, { useState } from 'react';
 import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
-// import TutorialCard from './TutorialCard';
 import { getTutorialData } from '../../actions/TutorialData';
+import TutorialsStyles from '../../styled-components/TutorialsStyles';
 
 const Tutorials = props => {
     return (
-        <div ClassName='tutorials-container'>
-            <div className='tutorials-header'>
+        <TutorialsStyles>
+            <div ClassName='tutorials-container'>
+                <div className='tutorials-header'>
 
-            </div>
-            <h1>How to Change a Lightbulb</h1>
-            <div className='tutorials-content'>
-                <div className='tutorial-top-content'>
-                    <img src={require("../../images/video.png")} />
                 </div>
-                <div className='tutorials-middle-content'>
-                    <button className='save-btn'>Save!</button>
-                    <button className='helpful-btn'>Helpful!</button>
-                    <button className='not-helpful-btn'>Didn't Help...</button>
+                <h1>How to Change a Lightbulb</h1>
+                <div className='tutorials-content'>
+                    <div className='tutorial-top-content'>
+                        <img src={require("../../images/video.png")} />
+                    </div>
+                    <div className='tutorials-middle-content'>
+                        <button className='save-btn'>Save!</button>
+                        <button className='helpful-btn'>Helpful!</button>
+                        <button className='not-helpful-btn'>Didn't Help...</button>
+                    </div>
+                    <div className='tutorials-bottom-content'>
+                        <h4>Description</h4>
+                    </div>
                 </div>
-                <div className='tutorials-bottom-content'>
-                    <h4>Description</h4>
-                </div>
-            </div>
-            <button className='get-tutorials-btn'
-                onClick={props.getTutorialsData}>
-                {props.isLoading ? (
-                    <Loader type='Oval'
-                        color='#00BFFF'
-                        height={20}
-                        width={20} />
-                ) : (
-                        'More Tutorials'
-                    )}
-            </button>
-            {/* {props.tutorialData && props.tutorialData.map(data => <TutorialCard key={data.name} tutorial={data} />)} */}
-            <div className='upload-tutorial'>
+                <button className='get-tutorials-btn'
+                    onClick={props.getTutorialsData}>
+                    {props.isLoading ? (
+                        <Loader type='Oval'
+                            color='#00BFFF'
+                            height={20}
+                            width={20} />
+                    ) : (
+                            'More Tutorials'
+                        )}
+                </button>
+                {/* {props.tutorialData && props.tutorialData.map(data => <TutorialCard key={data.name} tutorial={data} />)}
+                <div className='upload-tutorial'> */}
 
+                {/* </div> */}
             </div>
-        </div>
+        </TutorialsStyles >
     );
 };
 
