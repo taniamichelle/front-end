@@ -9,7 +9,7 @@ const initialState = {
   error: ""
 };
 
-const changePasswordReducer = (state = initialState, action) => {
+const editProfileReducer = (state = initialState, action) => {
   switch (action.type) {
     case EDIT_PROFILE_START:
       return {
@@ -36,4 +36,4 @@ const changePasswordReducer = (state = initialState, action) => {
   }
 };
 
-export default changePasswordReducer;
+export default editProfileReducer;
