@@ -39,17 +39,12 @@ const NewTutorials = (props) => {
         {/* <TutorialDiv> */}
           <div className='tutorials-list'>
             {props.tutorialsData && props.tutorialsData.map(tutorial => {
-                  return (
-                    <div class="tutorial-link">
-                      
-                      <TutorialsList title={tutorial.title} 
-                                      description={tutorial.description} 
-                                      helpful={tutorial.helpful}  
-                      />
-                    </div>
-                  )
-                }
-            )}
+              return (
+                <TutorialsList title={tutorial.title} 
+                                description={tutorial.description} 
+                                helpful={tutorial.helpful}  
+                />)}
+              )}
           </div>
         {/* </TutorialDiv> */}
     </div>
