@@ -15,6 +15,7 @@ import MyAccount from "./components/MyAccount/MyAccount";
 import UploadForm from "./components/Tutorials/UploadForm";
 import Tutorials from "./components/Tutorials/Tutorials";
 import EditProfile from "./components/MyAccount/EditProfile";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/myaccount" component={MyAccount} />
         <Route path="/tutorials" component={Tutorials} />
         <Route path="/editprofile" component={EditProfile} />
+        <Route path="/upload" component={UploadForm} />
       </ContentContainer>
     </div>
   );

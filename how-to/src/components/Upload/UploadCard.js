@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { deleteTutorial } from '../../actions';
+import { deleteTutorial } from '../../actions/TutorialData';
 
 // pass deleteTutorial fxn from Tutorials file as a prop to keep TutorialCard dumb
-const TutorialCard = (props) => {
+const UploadCard = (props) => {
     return (
-        <div className='tutorial-description'>
+        <div className='upload-description'>
             <p>{props.description}</p>
             <button onClick={() => deleteTutorial(props.id)}>Delete</button>
             <Link to={`/tutorials/edit/${props.id}`}>Edit</Link>
@@ -13,4 +13,4 @@ const TutorialCard = (props) => {
     );
 };
 
-export default TutorialCard;
+export default UploadCard;
