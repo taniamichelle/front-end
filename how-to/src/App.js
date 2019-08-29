@@ -14,7 +14,7 @@ import Search from './components/Search/Search';
 import MyAccount from './components/MyAccount/MyAccount';
 import UploadForm from './components/Upload/UploadForm';
 import Tutorials from './components/Tutorials/Tutorials';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 
 export default function App() {
   return (
@@ -26,10 +26,10 @@ export default function App() {
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
         <Route path="/signupsuccess" component={SignUpSuccess} />
-        <Route path="/search" component={Search} />
-        <Route path="/myaccount" component={MyAccount} />
-        <Route path="/tutorials" component={Tutorials} />
-        <Route path="/upload" component={UploadForm} />
+        <PrivateRoute path="/protected" component={Search} />
+        <PrivateRoute path="/protected" component={MyAccount} />
+        <PrivateRoute path="/protected" component={Tutorials} />
+        <PrivateRoute path="/protected" component={UploadForm} />
       </ContentContainer>
     </div>
   );
