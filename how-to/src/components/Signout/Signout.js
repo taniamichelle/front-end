@@ -2,8 +2,37 @@ import React from 'react';
 import axios from 'axios';
 import { Modal } from 'reactstrap';
 import { withRouter } from 'react-router'; 
+import styled from 'styled-components';
 
 import { ModalWrapper, PageMask, Button } from '../../styled-components/RequestStyles';
+
+const SignoutButton = styled.button`
+  background-color: #feffe5;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+`;
+
+const SignoutModal = styled(ModalWrapper)`
+  width: 450px;
+  height: 180px;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .modal-buttons {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+`;
 
 class Signout extends React.Component {
   constructor(props) {
@@ -42,18 +71,16 @@ class Signout extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle}>{this.props.buttonLabel}Signout</Button>
+        <SignoutButton onClick={this.toggle}>{this.props.buttonLabel}Sign Out</SignoutButton>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <PageMask />
-          <ModalWrapper>
-            {!this.state.signoutsuccess && (<div>
-              <h1>Would you like to log out?</h1>
-                <div className='modal-buttons'>
-                  <Button onClick={this.toggle}>No</Button>
-                  <Button onClick={this.handleSubmit}>Yes</Button>
-                </div>
-              </div>)}
-          </ModalWrapper>
+          <SignoutModal>
+            <h1>Would you like to log out?</h1>
+            <div className='modal-buttons'>
+              <Button onClick={this.toggle}>No</Button>
+              <Button onClick={this.handleSubmit}>Yes</Button>
+            </div>
+          </SignoutModal>
         </Modal>
       </div>
     );
