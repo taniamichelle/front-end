@@ -5,7 +5,7 @@ const TutorialsList = (props) => {
     return (
         <div>
             <div className='tutorials-title'>
-                <p>{props.title}</p>
+                <h3>{props.title}</h3>
             </div>
             <div className='tutorials-description'>
                 {props.description}
