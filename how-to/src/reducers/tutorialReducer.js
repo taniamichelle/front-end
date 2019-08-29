@@ -2,6 +2,9 @@ import {
     FETCH_TUTORIALS_START,
     FETCH_TUTORIALS_SUCCESS,
     FETCH_TUTORIALS_FAILURE,
+    NEW_TUTORIALS_START,
+    NEW_TUTORIALS_SUCCESS,
+    NEW_TUTORIALS_FAILURE,
     UPLOAD_TUTORIAL_START,
     UPLOAD_TUTORIAL_SUCCESS,
     UPLOAD_TUTORIAL_FAILURE,
@@ -39,6 +42,24 @@ const tutorialReducer = (state = initialState, action) => {
                 error: ''
             }
         case FETCH_TUTORIALS_FAILURE:
+            return {
+                ...state,
+                error: ''
+            }
+        case NEW_TUTORIALS_START:
+            return {
+                ...state,
+                isLoading: true,
+                error: ''
+            }
+        case NEW_TUTORIALS_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                tutorialsData: action.payload,
+                error: ''
+            }
+        case NEW_TUTORIALS_FAILURE:
             return {
                 ...state,
                 error: ''
