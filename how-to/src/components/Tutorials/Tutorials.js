@@ -3,6 +3,7 @@ import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
 import { getTutorialData } from '../../actions/TutorialData';
 import TutorialsStyles from '../../styled-components/TutorialsStyles';
+import TutorialsList from './TutorialsList';
 
 const Tutorials = props => {
     return (
@@ -26,7 +27,7 @@ const Tutorials = props => {
                     </div>
                 </div>
                 <button className='get-tutorials-btn'
-                    onClick={props.getTutorialsData}>
+                    onClick={props.getTutorialData}>
                     {props.isLoading ? (
                         <Loader type='Oval'
                             color='#00BFFF'
@@ -54,18 +55,7 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, { getTutorialData })(Tutorials);
 
-{/* <div className='tutorial-header'>
-
-</div>
-    <div className='tutorial-name'>
-        <h1>{props.tutorials.name}</h1> 
-    </div>
-    <div className='tutorial-top-content'>
-        <img src={require("../../images/video.png")} />
-        <button className='save-btn'>Save!</button>
-        <button className='helpful-btn'>Helpful!</button>
-        <button className='not-helpful-btn'>Didn't Help...</button>
-    </div>
+{/* 
     <div className='tutorial-bottom-content'>
         {props.tutorials.description} 
         {props.tutorials.map(tutorial => {

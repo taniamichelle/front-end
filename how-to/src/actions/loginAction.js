@@ -16,7 +16,7 @@ export const login = (user, history) => dispatch => {
       // set token to local storage
       localStorage.setItem("token", res.data.token);
       dispatch({ type: LOGIN_SUCCESS });
-      history.push("/myaccount");
+      history.push("/search");
     })
     .catch(err =>
       dispatch({
