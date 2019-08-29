@@ -13,16 +13,25 @@ const Tutorials = props => {
                     <h1>How to Change a Lightbulb</h1>
                 </div>
                 <div className='tutorials-content'>
-                    <div className='tutorials-top-content'>
-                        <img src={require("../../images/video.png")} />
-                    </div>
+                    <img src={require("../../images/video.png")} />
                     <div className='tutorials-middle-content'>
                         <button className='save-btn'>Save!</button>
-                        <button className='helpful-btn'>Helpful!</button>
-                        <button className='not-helpful-btn'>Didn't Help...</button>
+                        <div className='help-btns'>
+                            <div className='btns-count'>
+                                <button className='helpful-btn'>Helpful!</button>
+                                <p className='helpful-count'>4K</p>
+                            </div>
+                            <div className='btns-count'>
+                                <button className='not-helpful-btn'>Didn't<br />help...</button>
+                                <p not-helpful-count>293</p>
+                            </div>
+                        </div>
                     </div>
                     <div className='tutorials-bottom-content'>
                         <h4>Description</h4>
+                        <p className='tutorial-desc'>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quia inventore eveniet illo? Repudiandae officiis, ut sapiente facilis velit fugit quisquam ab soluta labore, voluptates quaerat iure quidem veritatis dolorum?
+                        </p>
                     </div>
                 </div>
                 <button className='get-tutorials-btn'
