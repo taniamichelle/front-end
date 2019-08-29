@@ -12,7 +12,7 @@ import SignUp from './components/SignUp/SignUp';
 import SignUpSuccess from './components/SignUp/SignUpSuccess';
 import Search from './components/Search/Search';
 import MyAccount from './components/MyAccount/MyAccount';
-import UploadForm from './components/Tutorials/UploadForm';
+import UploadForm from './components/Upload/UploadForm';
 import Tutorials from './components/Tutorials/Tutorials';
 
 export default function App() {
@@ -28,6 +28,7 @@ export default function App() {
         <Route path="/search" component={Search} />
         <Route path="/myaccount" component={MyAccount} />
         <Route path="/tutorials" component={Tutorials} />
+        <Route path="/upload" component={UploadForm} />
       </ContentContainer>
     </div>
   );
