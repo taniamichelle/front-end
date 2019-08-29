@@ -46,28 +46,26 @@ function Nav({ location, buttonLabel }) {
 
   const searchLink = (location.pathname.startsWith('/myaccount') 
     || location.pathname === '/upload'
-    || location.pathname === '/tutorial') 
+    || location.pathname === '/tutorials') 
     ? <li><NavLink to='/search'>Search</NavLink></li> 
     : null;
 
   const myAccountLink = (location.pathname.startsWith('/search')
     || location.pathname.startsWith('/myaccount') 
     || location.pathname === '/upload'
-    || location.pathname === '/tutorial') 
+    || location.pathname === '/tutorials') 
     ? <li><NavLink to='/myaccount'>Profile</NavLink></li> 
     : null;
 
   const uploadLink = (location.pathname.startsWith('/search')
-    || location.pathname.startsWith('/myaccount') 
-    || location.pathname === '/upload'
-    || location.pathname === '/tutorial') 
+    || location.pathname.startsWith('/myaccount')) 
     ? <li><NavLink to='/upload'>Upload</NavLink></li> 
     : null;
 
   const signOutLink = (location.pathname.startsWith('/search')
     || location.pathname.startsWith('/myaccount') 
     || location.pathname === '/upload'
-    || location.pathname === '/tutorial') 
+    || location.pathname === '/tutorials') 
     ? <li><Signout /></li> 
     : null;
 
@@ -86,7 +84,6 @@ function Nav({ location, buttonLabel }) {
         {myAccountLink}
         {uploadLink}
         {signOutLink}
-        {/* <Signout /> */}
       </ul>
     </StyledNav>
     
