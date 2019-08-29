@@ -17,6 +17,7 @@ const SignInDiv = styled.div`
 `;
 
 const WelcomeDiv = styled.div`
+  min-width: 45%;
   margin-right: 20px;
   p {
     text-align: left;
