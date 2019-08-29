@@ -7,6 +7,7 @@ import TutorialsStyles from '../../styled-components/TutorialsStyles';
 import TutorialsList from './TutorialsList';
 
 const Tutorials = props => {
+    console.log(props.tutorialsData);
     return (
         <TutorialsStyles>
             <div className='tutorials-container'>
@@ -34,7 +35,7 @@ const Tutorials = props => {
                         </p>
                     </div>
                 </div>
-                <button className='get-tutorials-btn'
+                {/* <button className='get-tutorials-btn'
                     onClick={props.getTutorialData}>
                     {props.isLoading ? (
                         <Loader type='Oval'
@@ -51,7 +52,7 @@ const Tutorials = props => {
                                        description={tutorial.description} 
                                        helpful={tutorial.helpful}  
                         />)}
-                    )}
+                    )} */}
             </div>
         </TutorialsStyles >
     );

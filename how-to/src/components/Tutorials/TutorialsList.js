@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const TutorialDiv = styled.div`
@@ -34,7 +34,7 @@ const TutorialsList = (props) => {
     return (
         <TutorialDiv>
             <div className='tutorial-link'>
-                <Link to='/tutorial'>
+                <Link to='/tutorials'>
                     <img alt='video' src={require('../../images/video.png')} />
                     <div className='tutorials-title'>
                         <h4>{props.title}</h4>

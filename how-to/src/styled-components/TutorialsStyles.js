@@ -39,7 +39,7 @@ const TutorialsStyles = styled.div`
             height: 300px;
             border: 10px solid #333a4d;
             border-radius: 15px;
-            margin: 40px 0 5px 0;
+            margin: 40px 0 15px 0;
         }
 
         .tutorials-middle-content {
