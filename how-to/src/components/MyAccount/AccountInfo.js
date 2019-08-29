@@ -12,10 +12,10 @@ const AccountInfo = ({ person }) => {
       <h4>Account Info</h4>
       <InfoDiv>
         <p>
-          Name: {person.first_name} {person.last_name}
+          Name: {person.firstName} {person.lastName} ({person.username})
         </p>
         <hr />
-        {/* <p>Email: {person.last_name}</p> */}
+        <p>Email: {person.email}</p>
         <hr />
       </InfoDiv>
     </div>
