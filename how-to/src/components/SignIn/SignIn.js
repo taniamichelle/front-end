@@ -28,9 +28,9 @@ const SignIn = props => {
   return (
     <SignInDiv>
       <WelcomeDiv>
-        <h2>Welcome Back</h2>
-        <p>We learned a lot while you were gone!</p>
-        <p>We're excited to share it with you!</p>
+        <h1>Welcome Back</h1>
+        <h3>We learned a lot while you were gone!</h3>
+        <h3>We're excited to share it with you!</h3>
       </WelcomeDiv>
       <Form>
         <FormWrapper>

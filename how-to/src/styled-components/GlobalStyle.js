@@ -10,12 +10,26 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Helvetica', sans-serif;
   }
 
-  .logo {
-    width: 120px;
-    position: absolute;
-    top: 20px;
-    left: 50px;
-    z-index: 9999;
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 18px;
   }
 `;
 
