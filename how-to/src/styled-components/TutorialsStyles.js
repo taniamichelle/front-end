@@ -13,6 +13,11 @@ const TutorialsStyles = styled.div`
         flex-flow: column nowrap;
         align-items: flex-end;
         width: 50%;
+
+        .tutorials-top-content {
+            margin-right: auto;
+            margin-left: auto;
+        }
     }
   
     .categories {

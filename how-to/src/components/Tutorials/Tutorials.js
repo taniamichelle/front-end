@@ -13,7 +13,7 @@ const Tutorials = props => {
                 </div>
                 <h1>How to Change a Lightbulb</h1>
                 <div className='tutorials-content'>
-                    <div className='tutorial-top-content'>
+                    <div className='tutorials-top-content'>
                         <img src={require("../../images/video.png")} />
                     </div>
                     <div className='tutorials-middle-content'>
