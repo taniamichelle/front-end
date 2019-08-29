@@ -17,7 +17,7 @@ const UploadForm = ({ addTutorial, tutorial }) => {
         addTutorial(tutorial);
         setUpload('');
     };
-
+    
     return (
         <UploadStyles>
             <div className='upload-container'>
