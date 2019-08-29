@@ -37,10 +37,13 @@ const Tutorials = props => {
                             'More Tutorials'
                         )}
                 </button>
-                {/* {props.tutorialData && props.tutorialData.map(data => <TutorialCard key={data.name} tutorial={data} />)}
-                <div className='upload-tutorial'> */}
-
-                {/* </div> */}
+                {props.tutorialsData && props.tutorialsData.map(tutorial => {
+                    return (
+                        <TutorialsList key={tutorial.title} 
+                                       description={tutorial.description} 
+                                       helpful={tutorial.helpful}  
+                        />)}
+                    )}
             </div>
         </TutorialsStyles >
     );
