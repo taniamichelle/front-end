@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import { Route, Link } from 'react-router-dom';
+import axios from 'axios';
 
 import Request from '../Request/Request';
 import RequestModal from '../Request/RequestModal';
@@ -14,6 +15,16 @@ import SearchStyles from '../../styled-components/SearchStyles';
 
 const SearchForm = ({ values }) => {
   const [filterStatus, setFilterStatus] = useState(false);
+  const [Tutorials, setTutorials] = useState([])
+
+  useEffect(() => {
+    axios
+      .get('https://how-to-bw.herokuapp.com/api/tutorials')
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
+  }, []);
 
   const handleReset = () => values.search='';
 
@@ -40,7 +51,7 @@ const SearchForm = ({ values }) => {
           <RequestModal isShowing={isShowing} hide={toggle} /> */}
         </div>
         <FilterBar filterStatus={filterStatus} />
-        <Route exact path='/search' component={NewTutorials} />
+        <Route exact path='/search' render={props => <NewTutorials {...props} />} />
         <Route path='/search/results' render={props => <SearchResults {...props} search={values.search} />} />
         <Route path='/search/filter' component={Filters} />
       </Form>
