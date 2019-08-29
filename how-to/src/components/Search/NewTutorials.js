@@ -5,38 +5,53 @@ import {newTutorialData} from '../../actions/TutorialData';
 import TutorialsList from '../Tutorials/TutorialsList';
 import {connect} from 'react-redux';
 
-const TutorialDiv = styled.div`
-  display: flex;
-  align-items: center;
+// const TutorialDiv = styled.div`
+//   display: flex;
+//   align-items: center;
 
-  img {
-    width: 150px;
-    height: 100px;
-    margin-right: 25px;
-  }
+//   img {
+//     width: 150px;
+//     height: 100px;
+//     margin-right: 25px;
+//   }
 
-  p {
-    font-size: 24px;
-    color: #353535;
-  }
-`;
+//   .tutorial-link {
+//     display: flex;
+//     align-items: center;
+//     margin-bottom: 50px; 
+
+//     &:last-child {
+//       margin-bottom: 0;
+//     }
+//   }
+
+//   p {
+//     font-size: 24px;
+//     color: #353535;
+//   }
+// `;
 
 const NewTutorials = (props) => {
 
   return (
     <div>
       <h3>What's New?</h3>
-        <TutorialDiv>
+        {/* <TutorialDiv> */}
           <div className='tutorials-list'>
             {props.tutorialsData && props.tutorialsData.map(tutorial => {
                   return (
+                    <div class="tutorial-link">
+                      
                       <TutorialsList title={tutorial.title} 
                                       description={tutorial.description} 
                                       helpful={tutorial.helpful}  
-                      />)}
-                  )}
+                      />
+                    </div>
+                  )
+                }
+            )}
           </div>
-        </TutorialDiv>
+        {/* </TutorialDiv> */}
     </div>
   )
 }
