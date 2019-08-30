@@ -76,7 +76,7 @@ function Nav({ location, buttonLabel }) {
     <StyledNav>
       <NavLink><img className='logo' alt='logo' src={require('../../images/logo.png')} /></NavLink>
       <ul>
-        {location.pathname === '/signin'
+        {location.pathname === '/signin' || location.pathname === '/'
           && <li><NavLink to='/signup'>Sign Up</NavLink></li>}
         {location.pathname === '/signup' 
           && <li><NavLink to='/signin'>Sign In</NavLink></li>}
