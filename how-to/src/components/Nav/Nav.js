@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { withRouter } from 'react-router';
 import Signout from '../Signout/Signout';
-
-
 
 const StyledNav = styled.nav`
   display: flex;
@@ -42,7 +40,7 @@ const StyledNav = styled.nav`
   }
 `;
 
-function Nav({ location, buttonLabel }) {
+function Nav({ location }) {
 
   const signupLink = (location.pathname === '/' 
     || location.pathname === '/signin') 
@@ -74,15 +72,10 @@ function Nav({ location, buttonLabel }) {
     ? <li><Signout /></li> 
     : null;
 
-
-
-
   return (
     <StyledNav>
       <NavLink><img className='logo' alt='logo' src={require('../../images/logo.png')} /></NavLink>
       <ul>
-        {/* {location.pathname === '/signin' || location.pathname === '/'
-          && <li><NavLink to='/signup'>Sign Up</NavLink></li>} */}
         {signupLink}
         {location.pathname === '/signup' 
           && <li><NavLink to='/signin'>Sign In</NavLink></li>}
@@ -91,8 +84,7 @@ function Nav({ location, buttonLabel }) {
         {uploadLink}
         {signOutLink}
       </ul>
-    </StyledNav>
-    
+    </StyledNav> 
   )
  }
 

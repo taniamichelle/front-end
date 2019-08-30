@@ -1,14 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
-const documentWidth = document.documentElement.clientWidth;
-const windowWidth = window.innerWidth;
-const scrollBarWidth = windowWidth - documentWidth;
-
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    padding-right: {scrollBarWidth}px;
     overflow-x: hidden;
     background-color: #feffe5;
     width: 100%;
@@ -16,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body.modal-open {
-
+    position: fixed;
   }
 
   h1 {
