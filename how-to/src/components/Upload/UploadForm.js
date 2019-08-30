@@ -62,7 +62,7 @@ const UploadForm = ({ addTutorial, tutorial }) => {
                                 <legend>Tutorial Description</legend>
                                 <textarea
                                     name='description'
-                                    rows='15'
+                                    rows='10'
                                     value={upload.description}
                                     onChange={handleChange}
                                 />

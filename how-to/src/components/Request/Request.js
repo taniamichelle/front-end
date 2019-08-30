@@ -20,6 +20,7 @@ class Request extends React.Component {
   }
 
   toggle() {
+    // console.log('toggle');
     this.setState(prevState => ({
       modal: !prevState.modal,
       requestsuccess: false,
@@ -27,7 +28,7 @@ class Request extends React.Component {
   }
 
   handleSubmit = () => {
-      console.log('handleSubmit fired!')
+      // console.log('handleSubmit fired!')
     axios
       .post('https://reqres.in/api/users', {name: this.state.name, job: this.state.job})
       .then(res => {

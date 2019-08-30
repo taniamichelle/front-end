@@ -14,13 +14,8 @@ const Uploads = (props) => {
     const [uploads, setUploads] = useState([]);
 
     // this fxn performs get request and updates our state
-<<<<<<< HEAD
     const getTutorials = () => {
         props.getTutorialData();
-=======
-    const getTutorials = (tutorials) => {
-        props.getTutorialData(tutorials);
->>>>>>> 3e11eccba1deb5b1133e7eb870c0e3217f18da0d
     };
 
     useEffect(() => {
@@ -29,17 +24,17 @@ const Uploads = (props) => {
 
     const addTutorial = (tutorial) => {
         props.uploadTutorial(tutorial);
-        props.history.push('/tutorials');
+        props.history.push('/search');
     };
 
     const editFunction = (tutorial) => {
         props.editTutorial(tutorial);
-        props.history.push('/tutorials');
+        props.history.push('/search');
     };
 
     const deleteFunction = (tutorial) => {
         props.deleteTutorial(tutorial);
-        props.history.push('/tutorials');
+        props.history.push('/search');
     };
 
     return (

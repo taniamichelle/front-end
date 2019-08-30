@@ -10,6 +10,17 @@ const SearchStyles = styled.div`
     font-size: 30px;
   }
 
+  button {
+    cursor: pointer;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 3px;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -29,17 +40,11 @@ const SearchStyles = styled.div`
         font-size: 18px;
       }
 
-      a {
+      .search-img {
         width: 5%;
-        display: flex;
-        
-        img {
-          width: 100%;
-          border: 2px solid #cbcbcb;
-          cursor: pointer;
-        }
+        border: 2px solid #cbcbcb;
+        cursor: pointer;
       }
-      
     }
 
     .buttons {
@@ -47,26 +52,21 @@ const SearchStyles = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-  
-      button {
-        cursor: pointer;
-        color: white;
-        border: none;
-        outline: none;
-        font-size: 14px;
-        font-weight: bold;
-        padding: 5px;
-        border-radius: 3px;
-      }
-  
-      .resetBtn {
-        background-color: #000e33;
-      }
-    
-      .requestBtn {
-        background-color: #0036cc;
-      }
     }
+  }
+
+  .filter-request {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .resetBtn {
+    background-color: #000e33;
+  }
+
+  .requestBtn {
+    background-color: #0036cc;
   }
 `;
 
