@@ -10,7 +10,7 @@ const TutorialsStyles = styled.div`
         align-items: center;
   
         h1 {
-            margin: 0;
+            text-align: center;
         }
 
         .back-btn {

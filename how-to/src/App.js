@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Route, Link, Switch } from "react-router-dom";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 
 // Styles
 import GlobalStyle from "./styled-components/GlobalStyle";
@@ -13,7 +13,8 @@ import SignUpSuccess from "./components/SignUp/SignUpSuccess";
 import Search from "./components/Search/Search";
 import MyAccount from "./components/MyAccount/MyAccount";
 import UploadForm from "./components/Upload/UploadForm";
-import Tutorials from "./components/Tutorials/Tutorials";
+// import Tutorials from "./components/Tutorials/Tutorials";
+import TutorialRouter from './components/Tutorials/TutorialRouter';
 import EditProfile from "./components/MyAccount/EditProfile";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
@@ -35,7 +36,8 @@ export default function App() {
             component={EditProfile}
           />
           <PrivateRoute path="/myaccount" component={MyAccount} />
-          <PrivateRoute path="/tutorials" component={Tutorials} />
+          {/* <PrivateRoute path="/tutorials" component={Tutorials} /> */}
+          <PrivateRoute path='/tutorial' component={TutorialRouter} />
           <PrivateRoute path="/upload" component={UploadForm} />
         </Switch>
       </ContentContainer>

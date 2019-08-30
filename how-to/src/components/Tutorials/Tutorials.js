@@ -35,7 +35,7 @@ const Tutorials = props => {
                         </p>
                     </div>
                 </div>
-                {/* <button className='get-tutorials-btn'
+                <button className='get-tutorials-btn'
                     onClick={props.getTutorialData}>
                     {props.isLoading ? (
                         <Loader type='Oval'
@@ -52,7 +52,7 @@ const Tutorials = props => {
                                        description={tutorial.description} 
                                        helpful={tutorial.helpful}  
                         />)}
-                    )} */}
+                    )}
             </div>
         </TutorialsStyles >
     );

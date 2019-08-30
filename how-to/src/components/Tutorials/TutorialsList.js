@@ -34,7 +34,7 @@ const TutorialsList = (props) => {
     return (
         <TutorialDiv>
             <div className='tutorial-link'>
-                <Link to='/tutorials'>
+                <Link to={`/tutorial/${props.id}`}>
                     <img alt='video' src={require('../../images/video.png')} />
                     <div className='tutorials-title'>
                         <h4>{props.title}</h4>
