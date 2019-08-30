@@ -38,12 +38,20 @@ const SearchForm = props => {
     props.history.push('/search/results');
   };
 
+  const handleKeyDown = event => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      setFilteredTutorials(props.tutorialsData.filter(element => JSON.stringify(element).toLowerCase().includes(search.toLowerCase())));
+      props.history.push('/search/results');  
+    }
+  }
+
   return (
     <SearchStyles>
       <h2>Let's Learn!</h2>
       <form>
         <div className='searchbar'>
-          <input name='search' type='text' value={search} onChange={event => handleChange(event)} placeholder='Search' />
+          <input name='search' type='text' value={search} onChange={event => handleChange(event)} onKeyDown={event => handleKeyDown(event)} placeholder='Search' />
           <img className='search-img' alt='search' onClick={event => handleSubmit(event)}
             src={require('../../images/search_white.png')} 
           />

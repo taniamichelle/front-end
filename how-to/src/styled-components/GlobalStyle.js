@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Helvetica', sans-serif;
   }
 
+  body.modal-open {
+
+  }
+
   h1 {
     font-size: 36px;
   }

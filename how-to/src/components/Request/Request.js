@@ -47,7 +47,7 @@ class Request extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle}>{this.props.buttonLabel}Request<br/>Tutorial</Button>
+        <Button onClick={this.toggle} tabindex='0'>{this.props.buttonLabel}Request<br/>Tutorial</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <PageMask />
           <ModalWrapper>
