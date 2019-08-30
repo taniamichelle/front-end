@@ -14,8 +14,13 @@ const Uploads = (props) => {
     const [uploads, setUploads] = useState([]);
 
     // this fxn performs get request and updates our state
+<<<<<<< HEAD
     const getTutorials = () => {
         props.getTutorialData();
+=======
+    const getTutorials = (tutorials) => {
+        props.getTutorialData(tutorials);
+>>>>>>> 3e11eccba1deb5b1133e7eb870c0e3217f18da0d
     };
 
     useEffect(() => {

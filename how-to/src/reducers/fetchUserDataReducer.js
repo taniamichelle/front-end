@@ -9,6 +9,7 @@ const initialState = {
   lastName: "",
   email: "",
   username: "",
+  password: "",
   isFetching: false,
   error: ""
 };

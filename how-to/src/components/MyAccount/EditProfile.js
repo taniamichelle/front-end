@@ -78,7 +78,8 @@ const mapStateToProps = state => {
     lastName: state.fetchUserDataReducer.lastName,
     email: state.fetchUserDataReducer.email,
     username: state.fetchUserDataReducer.username,
-    id: state.fetchUserDataReducer.id
+    id: state.fetchUserDataReducer.id,
+    password: state.fetchUserDataReducer.password
   };
 };
 
@@ -106,15 +107,16 @@ export default connect(
     }),
 
     handleSubmit(values, { props, setStatus }) {
-      // pass user object, user id, and history object
+      // pass user object and history object
       props.submitEditedProfile(
         {
           username: values.username,
           firstName: values.firstName,
           lastName: values.lastName,
-          email: values.email
+          email: values.email,
+          id: props.id,
+          password: props.password
         },
-        props.id,
         props.history
       );
     }

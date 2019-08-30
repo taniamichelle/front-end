@@ -33,9 +33,7 @@ const MyAccount = ({
   };
 
   useEffect(() => {
-    if (!firstName) {
-      fetchUserData();
-    }
+    fetchUserData();
   }, []);
 
   if (!firstName) {
