@@ -15,10 +15,9 @@ const Uploads = (props) => {
 
     // this fxn performs get request and updates our state
     const getTutorials = () => {
-        props.getTutorialData(tutorials);
+        props.getTutorialData();
     };
 
-    // call getTutorials in useEffect
     useEffect(() => {
         getTutorials();
     }, []);
@@ -44,11 +43,7 @@ const Uploads = (props) => {
                 <h1>Tutorials</h1>
             </div>
             <UploadForm {...props} addTutorial={addTutorial} deleteTutorial={deleteTutorial} editTutorial={editTutorial} />;
-            {/* {props.tutorials.map(tutorial => {
-                return <TutorialCard key={props.tutorials.id}
-                    tutorials={props.tutorials}
-                    deleteTutorial={props.deleteTutorial} editTutorial={props.editTutorial} />;
-            })} */}
+
         </div>
     );
 };

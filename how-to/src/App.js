@@ -12,7 +12,7 @@ import SignUp from "./components/SignUp/SignUp";
 import SignUpSuccess from "./components/SignUp/SignUpSuccess";
 import Search from "./components/Search/Search";
 import MyAccount from "./components/MyAccount/MyAccount";
-import UploadForm from "./components/Upload/UploadForm";
+import Upload from "./components/Upload/Upload";
 import Tutorials from "./components/Tutorials/Tutorials";
 import EditProfile from "./components/MyAccount/EditProfile";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
@@ -36,7 +36,7 @@ export default function App() {
           />
           <PrivateRoute path="/myaccount" component={MyAccount} />
           <PrivateRoute path="/tutorials" component={Tutorials} />
-          <PrivateRoute path="/upload" component={UploadForm} />
+          <PrivateRoute path="/upload" component={Upload} />
         </Switch>
       </ContentContainer>
     </div>
