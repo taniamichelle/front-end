@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { newTutorialData } from '../../actions/TutorialData';
 import { Route } from 'react-router-dom';
@@ -23,9 +23,13 @@ const SearchForm = props => {
 
   const toggleFilter = () => {
     setFilterOpen(!filterOpen);
+  };
+
+  useEffect ((
+  ) => {
     filterOpen ? setArrowStyle({transform: 'rotate(90deg)'}) : setArrowStyle({});
     filterOpen ? props.history.push('/search/filter') : props.history.push('/search');
-  };
+  }, [filterOpen]);
 
   const handleReset = () => {
     setSearch('');

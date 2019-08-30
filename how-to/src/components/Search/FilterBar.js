@@ -7,7 +7,6 @@ const FilterStyles = styled.div`
   .filterbar {
     display: flex;
     align-items: center;
-    cursor: pointer;
   }
 
   span {
@@ -27,7 +26,7 @@ const Filters = props => {
       <div className='filterbar'>
         <span>Filters</span>
           <img 
-            style={props.arrowStyle}
+            style={{cursor: 'pointer', ...props.arrowStyle}}
             alt='filter arrow' 
             onClick={props.toggleFilter}
             src={require('../../images/filter-arrow.png')} 
