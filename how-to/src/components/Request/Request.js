@@ -20,7 +20,8 @@ class Request extends React.Component {
   }
 
   toggle() {
-    console.log('toggle');
+    // console.log('toggle');
+    // document.documentElement.scrollTop = 0;
     this.setState(prevState => ({
       modal: !prevState.modal,
       requestsuccess: false,
@@ -28,7 +29,7 @@ class Request extends React.Component {
   }
 
   handleSubmit = () => {
-      console.log('handleSubmit fired!')
+      // console.log('handleSubmit fired!')
     axios
       .post('https://reqres.in/api/users', {name: this.state.name, job: this.state.job})
       .then(res => {
@@ -47,7 +48,7 @@ class Request extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle} tabindex='0'>{this.props.buttonLabel}Request<br/>Tutorial</Button>
+        <Button onClick={this.toggle}>{this.props.buttonLabel}Request<br/>Tutorial</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <PageMask />
           <ModalWrapper>

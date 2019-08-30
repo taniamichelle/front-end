@@ -44,6 +44,11 @@ const StyledNav = styled.nav`
 
 function Nav({ location, buttonLabel }) {
 
+  const signupLink = (location.pathname === '/' 
+    || location.pathname === '/signin') 
+    ? <li><NavLink to='/signup'>Sign Up</NavLink></li>
+    : null;
+
   const searchLink = (location.pathname.startsWith('/myaccount') 
     || location.pathname === '/upload'
     || location.pathname.startsWith('/tutorial')) 
@@ -76,8 +81,9 @@ function Nav({ location, buttonLabel }) {
     <StyledNav>
       <NavLink><img className='logo' alt='logo' src={require('../../images/logo.png')} /></NavLink>
       <ul>
-        {location.pathname === '/signin' || location.pathname === '/'
-          && <li><NavLink to='/signup'>Sign Up</NavLink></li>}
+        {/* {location.pathname === '/signin' || location.pathname === '/'
+          && <li><NavLink to='/signup'>Sign Up</NavLink></li>} */}
+        {signupLink}
         {location.pathname === '/signup' 
           && <li><NavLink to='/signin'>Sign In</NavLink></li>}
         {searchLink}
