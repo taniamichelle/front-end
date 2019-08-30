@@ -20,6 +20,7 @@ class Request extends React.Component {
   }
 
   toggle() {
+    console.log('toggle');
     this.setState(prevState => ({
       modal: !prevState.modal,
       requestsuccess: false,

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Form, Field, withFormik } from 'formik';
-import { Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { newTutorialData } from '../../actions/TutorialData';
+import { Route } from 'react-router-dom';
 
 import Request from '../Request/Request';
-// import RequestModal from '../Request/RequestModal';
-// import useModal from './useModal';
 import FilterBar from './FilterBar';
 import NewTutorials from './NewTutorials';
 import SearchResults from './SearchResults';
@@ -12,50 +11,65 @@ import Filters from './Filters';
 
 import SearchStyles from '../../styled-components/SearchStyles';
 
-const SearchForm = ({ values }) => {
+const SearchForm = props => {
+  console.log(props.tutorialsData);
   const [filterStatus, setFilterStatus] = useState(false);
-  const [Tutorials, setTutorials] = useState([])
+  const [search, setSearch] = useState('');
+  const [filteredTutorials, setFilteredTutorials] = useState([]);
 
-  const handleReset = () => values.search='';
+  const handleChange = event => setSearch(event.target.value);
 
-  const handleSearch = () => {};
+  const handleReset = () => {
+    setSearch('');
+    props.history.push('/search');
+  };
 
-  // const { isShowing, toggle } = useModal();
+  const handleSubmit = event => {
+    event.preventDefault();
+    setFilteredTutorials(props.tutorialsData.filter(element => JSON.stringify(element).toLowerCase().includes(search.toLowerCase())));
+    props.history.push('/search/results');
+  };
 
   return (
     <SearchStyles>
       <h2>Let's Learn!</h2>
-      <Form>
+      <form>
         <div className='searchbar'>
-          <Field name='search' type='text' placeholder='Search' />
-          <Link to='/search/results'>
-            <img alt='search' 
-              src={require('../../images/search_white.png')} 
-            />
-          </Link>
+          <input name='search' type='text' value={search} onChange={event => handleChange(event)} placeholder='Search' />
+          <img className='search-img' alt='search' onClick={event => handleSubmit(event)}
+            src={require('../../images/search_white.png')} 
+          />
         </div>
+      </form>
         <br />
         <div className='buttons'>
-          {values.search !== '' && <button className='resetBtn' onClick={handleReset}>Reset</button>}
+          {search !== '' && <button className='resetBtn' onClick={handleReset}>Reset</button>}
           <span></span>
+        </div>
+        <div className='filter-request'>
+          <FilterBar filterStatus={filterStatus} />
           <Request />
         </div>
-        <FilterBar filterStatus={filterStatus} />
         <Route exact path='/search' render={props => <NewTutorials {...props} />} />
-        <Route path='/search/results' render={props => <SearchResults {...props} search={values.search} />} />
+        <Route path='/search/results' render={props => <SearchResults {...props} search={search} filteredTutorials={filteredTutorials} />} />
         <Route path='/search/filter' component={Filters} />
-      </Form>
+      {/* </form> */}
     </SearchStyles>
   )
 }
 
-const FormikSearch = withFormik({
-  mapPropsToValues({ search }) {
-    return {
-      search: search || '',
-    }
-  },
+// const FormikSearch = withFormik({
+//   mapPropsToValues({ search }) {
+//     return {
+//       search: search || '',
+//     }
+//   },
+// })(SearchForm);
 
-})(SearchForm);
+const mapStateToProps = state => {
+  return {
+    tutorialsData: state.tutorialReducer.tutorialsData
+  };
+};
 
-export default FormikSearch;
+export default connect(mapStateToProps, newTutorialData)(SearchForm);
