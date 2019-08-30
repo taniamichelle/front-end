@@ -12,12 +12,8 @@ import SignUp from "./components/SignUp/SignUp";
 import SignUpSuccess from "./components/SignUp/SignUpSuccess";
 import Search from "./components/Search/Search";
 import MyAccount from "./components/MyAccount/MyAccount";
-<<<<<<< HEAD
-import Upload from "./components/Upload/Upload";
-=======
 import Upload from './components/Upload/Upload';
 import UploadForm from "./components/Upload/UploadForm";
->>>>>>> 3e11eccba1deb5b1133e7eb870c0e3217f18da0d
 import Tutorials from "./components/Tutorials/Tutorials";
 import TutorialRouter from './components/Tutorials/TutorialRouter';
 import EditProfile from "./components/MyAccount/EditProfile";
@@ -43,10 +39,7 @@ export default function App() {
           />
           <PrivateRoute path="/myaccount" component={MyAccount} />
           <PrivateRoute path="/tutorials" component={Tutorials} />
-<<<<<<< HEAD
-=======
           <PrivateRoute path='/tutorial' component={TutorialRouter} />
->>>>>>> 3e11eccba1deb5b1133e7eb870c0e3217f18da0d
           <PrivateRoute path="/upload" component={Upload} />
         </Switch>
       </ContentContainer>
