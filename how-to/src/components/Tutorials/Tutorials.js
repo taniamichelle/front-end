@@ -46,13 +46,16 @@ const Tutorials = props => {
                             'More Tutorials'
                         )}
                 </button>
-                {props.tutorialsData && props.tutorialsData.map(tutorial => {
-                    return (
-                        <TutorialsList title={tutorial.title} 
-                                       description={tutorial.description} 
-                                       helpful={tutorial.helpful}  
-                        />)}
+                <div className='list'>
+                    {props.tutorialsData && props.tutorialsData.map(tutorial => {
+                        return (
+                            <TutorialsList title={tutorial.title} 
+                                description={tutorial.description} 
+                                helpful={tutorial.helpful}  
+                            />
+                        )}
                     )}
+                </div>
             </div>
         </TutorialsStyles >
     );

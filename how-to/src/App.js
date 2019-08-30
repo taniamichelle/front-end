@@ -12,10 +12,12 @@ import SignUp from "./components/SignUp/SignUp";
 import SignUpSuccess from "./components/SignUp/SignUpSuccess";
 import Search from "./components/Search/Search";
 import MyAccount from "./components/MyAccount/MyAccount";
+import Upload from './components/Upload/Upload';
 import UploadForm from "./components/Upload/UploadForm";
-// import Tutorials from "./components/Tutorials/Tutorials";
+import Tutorials from "./components/Tutorials/Tutorials";
 import TutorialRouter from './components/Tutorials/TutorialRouter';
 import EditProfile from "./components/MyAccount/EditProfile";
+import MyTutorials from './components/MyTutorials/MyTutorials';
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export default function App() {
@@ -36,9 +38,9 @@ export default function App() {
             component={EditProfile}
           />
           <PrivateRoute path="/myaccount" component={MyAccount} />
-          {/* <PrivateRoute path="/tutorials" component={Tutorials} /> */}
+          <PrivateRoute path="/tutorials" component={Tutorials} />
           <PrivateRoute path='/tutorial' component={TutorialRouter} />
-          <PrivateRoute path="/upload" component={UploadForm} />
+          <PrivateRoute path="/upload" component={Upload} />
         </Switch>
       </ContentContainer>
     </div>

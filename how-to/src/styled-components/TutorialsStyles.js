@@ -131,6 +131,13 @@ const TutorialsStyles = styled.div`
             outline: none;
             margin-top: 20px;
         }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
     }
 `;
 
