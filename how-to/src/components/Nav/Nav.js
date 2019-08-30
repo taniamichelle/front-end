@@ -74,7 +74,7 @@ function Nav({ location }) {
 
   return (
     <StyledNav>
-      <NavLink><img className='logo' alt='logo' src={require('../../images/logo.png')} /></NavLink>
+      <NavLink to='/search'><img className='logo' alt='logo' src={require('../../images/logo.png')} /></NavLink>
       <ul>
         {signupLink}
         {location.pathname === '/signup' 

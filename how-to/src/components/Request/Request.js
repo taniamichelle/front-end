@@ -21,7 +21,6 @@ class Request extends React.Component {
 
   toggle() {
     // console.log('toggle');
-    // document.documentElement.scrollTop = 0;
     this.setState(prevState => ({
       modal: !prevState.modal,
       requestsuccess: false,
