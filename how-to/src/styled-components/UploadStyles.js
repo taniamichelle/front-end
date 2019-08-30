@@ -49,6 +49,11 @@ const UploadStyles = styled.div`
                 textarea {
                     box-sizing: border-box;
                     width: 100%;
+                    border: 2px solid #cacbbe;
+                    font-size: 18px;
+                    font-family: 'Helvetica', sans-serif;
+                    border-radius: 3px;
+                    padding: 10px 5px;
                 }
 
                 button {
