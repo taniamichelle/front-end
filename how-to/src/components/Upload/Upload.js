@@ -25,17 +25,17 @@ const Uploads = (props) => {
 
     const addTutorial = (tutorial) => {
         props.uploadTutorial(tutorial);
-        props.history.push('/tutorials');
+        props.history.push('/search');
     };
 
     const editFunction = (tutorial) => {
         props.editTutorial(tutorial);
-        props.history.push('/tutorials');
+        props.history.push('/search');
     };
 
     const deleteFunction = (tutorial) => {
         props.deleteTutorial(tutorial);
-        props.history.push('/tutorials');
+        props.history.push('/search');
     };
 
     return (
