@@ -10,7 +10,7 @@ const TutorialsStyles = styled.div`
         align-items: center;
   
         h1 {
-            margin: 0;
+            text-align: center;
         }
 
         .back-btn {
@@ -39,7 +39,7 @@ const TutorialsStyles = styled.div`
             height: 300px;
             border: 10px solid #333a4d;
             border-radius: 15px;
-            margin: 40px 0 5px 0;
+            margin: 40px 0 15px 0;
         }
 
         .tutorials-middle-content {
@@ -129,6 +129,13 @@ const TutorialsStyles = styled.div`
             border-radius: 5px;
             cursor: pointer;
             outline: none;
+            margin-top: 20px;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             margin-top: 20px;
         }
     }

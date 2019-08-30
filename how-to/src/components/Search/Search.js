@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -16,15 +16,6 @@ import SearchStyles from '../../styled-components/SearchStyles';
 const SearchForm = ({ values }) => {
   const [filterStatus, setFilterStatus] = useState(false);
   const [Tutorials, setTutorials] = useState([])
-
-  useEffect(() => {
-    axios
-      .get('https://how-to-bw.herokuapp.com/api/tutorials')
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => console.log(err));
-  }, []);
 
   const handleReset = () => values.search='';
 
