@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import UploadStyles from '../../styled-components/UploadStyles';
 
 const UploadForm = ({ addTutorial, tutorial }) => {
-    console.log(addTutorial);
+    console.log('add tut', addTutorial);
     const [upload, setUpload] = useState({
         name: '',
         description: '',
@@ -11,6 +11,12 @@ const UploadForm = ({ addTutorial, tutorial }) => {
     });
 
     const handleChange = event => setUpload({ ...upload, [event.target.name]: event.target.value });
+
+    // const handleSubmit = event => {
+    //     event.preventDefault();
+    //     uploadTutorial(tutorial);
+    //     setUpload('');
+    // };
 
     const handleSubmit = event => {
         event.preventDefault();
