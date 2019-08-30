@@ -14,10 +14,18 @@ import SearchStyles from '../../styled-components/SearchStyles';
 const SearchForm = props => {
   console.log(props.tutorialsData);
   const [filterStatus, setFilterStatus] = useState(false);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [arrowStyle, setArrowStyle] = useState({});
   const [search, setSearch] = useState('');
   const [filteredTutorials, setFilteredTutorials] = useState([]);
 
   const handleChange = event => setSearch(event.target.value);
+
+  const toggleFilter = () => {
+    setFilterOpen(!filterOpen);
+    filterOpen ? setArrowStyle({transform: 'rotate(90deg)'}) : setArrowStyle({});
+    filterOpen ? props.history.push('/search/filter') : props.history.push('/search');
+  };
 
   const handleReset = () => {
     setSearch('');
@@ -47,7 +55,7 @@ const SearchForm = props => {
           <span></span>
         </div>
         <div className='filter-request'>
-          <FilterBar filterStatus={filterStatus} />
+          <FilterBar filterOpen={filterOpen} toggleFilter={toggleFilter} arrowStyle={arrowStyle} />
           <Request />
         </div>
         <Route exact path='/search' render={props => <NewTutorials {...props} />} />
@@ -57,14 +65,6 @@ const SearchForm = props => {
     </SearchStyles>
   )
 }
-
-// const FormikSearch = withFormik({
-//   mapPropsToValues({ search }) {
-//     return {
-//       search: search || '',
-//     }
-//   },
-// })(SearchForm);
 
 const mapStateToProps = state => {
   return {

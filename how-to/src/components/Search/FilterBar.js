@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
 
 const FilterStyles = styled.div`
@@ -8,6 +7,7 @@ const FilterStyles = styled.div`
   .filterbar {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   span {
@@ -20,16 +20,18 @@ const FilterStyles = styled.div`
 `;
 
 const Filters = props => {
+  console.log(props.filterOpen);
+
   return (
     <FilterStyles>
       <div className='filterbar'>
         <span>Filters</span>
-        <Link to='/search/filter'>
           <img 
+            style={props.arrowStyle}
             alt='filter arrow' 
+            onClick={props.toggleFilter}
             src={require('../../images/filter-arrow.png')} 
           />
-        </Link>
         {props.filterStatus ? 'Applied' : 'None'}
       </div>
     </FilterStyles>
